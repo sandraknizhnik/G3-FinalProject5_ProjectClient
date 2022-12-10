@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.AppBar?>
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.catalogcontroller">
+   <children>
+      <AppBar titleText="AppBar" />
+      <DropdownButton>
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+      <HBox prefHeight="318.0" prefWidth="600.0">
+         <children>
+            <TableView prefHeight="100.0" prefWidth="646.0">
+              <columns>
+                <TableColumn fx:id="product" prefWidth="75.0" text="product" />
+                <TableColumn fx:id="picture" prefWidth="208.0" text="picture" />
+                  <TableColumn fx:id="price" prefWidth="84.0" text="price" />
+                  <TableColumn fx:id="add" prefWidth="55.0" text="add" />
+              </columns>
+            </TableView>
+            <TableView prefHeight="100.0" prefWidth="401.0">
+              <columns>
+                <TableColumn fx:id="cart" prefWidth="75.0" text="cart" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+</VBox>

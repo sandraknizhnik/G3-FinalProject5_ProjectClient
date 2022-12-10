@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boundry.loginController">
+   <children>
+      <TextField fx:id="username" layoutX="469.0" layoutY="126.0" promptText="username" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent;" />
+      <PasswordField fx:id="password" layoutX="469.0" layoutY="187.0" promptText="password" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent;" />
+      <Button fx:id="loginbtn" layoutX="468.0" layoutY="247.0" mnemonicParsing="false" onAction="#press_Login" prefHeight="33.0" prefWidth="155.0" style="-fx-background-color: #0598ff;" text="Login" />
+      <Hyperlink fx:id="forgotpassword" layoutX="488.0" layoutY="320.0" onAction="#pressForgot" text="Forgot password?" />
+      <FontAwesomeIconView fill="#0598ff" glyphName="USER" layoutX="438.0" layoutY="148.0" size="20" text="" />
+      <FontAwesomeIconView fill="#0598ff" glyphName="KEY" layoutX="435.0" layoutY="208.0" size="20" text="" />
+      <FontAwesomeIconView fill="#0598ff" glyphName="USERS" layoutX="518.0" layoutY="63.0" size="35" />
+      <AnchorPane prefHeight="400.0" prefWidth="395.0" style="-fx-background-color: #0598ff;">
+         <children>
+            <Label layoutX="93.0" layoutY="49.0" text="Welcome to Ekrut" textFill="#0d0d0d">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="103.0" text="here you can buy ehatecer you want" textFill="#6b1515">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="SignUpbtn" layoutX="134.0" layoutY="181.0" mnemonicParsing="false" onAction="#pressSignUp" prefHeight="39.0" prefWidth="155.0" text="Sign Up" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="493.0" layoutY="74.0" text="User Login" textFill="#0598ff">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
