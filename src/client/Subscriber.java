@@ -3,13 +3,16 @@ package client;
 
 public class Subscriber {
 	// Class variables *************************************************
-	private String id;
+	private String userName;
+	private String password;
 	private String firstName;
 	private String lastName;
-	private String phone_number;
+	private String role;
 	private String email;
-	private String credit_card_number;
-	private String subscriberNumber; 
+	private String phoneNumer;
+	private String id;
+	private String isLoggedIn;
+	private String storeName;
 	//******************************************************************
 	
 	/**
@@ -20,85 +23,100 @@ public class Subscriber {
 	
 	
 	
-	public Subscriber(String id, String FName, String LName, String phone_number,String email,String credit_card_number,String Subscriber_number) {
+
+	public Subscriber(String userName, String password, String firstName, String lastName, String role, String email,
+			String phoneNumer, String id, String isLoggedIn, String storeName) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
+		this.email = email;
+		this.phoneNumer = phoneNumer;
 		this.id = id;
-		this.firstName=FName;
-		this.lastName=LName;
-		this.phone_number=phone_number;
-		this.email=email;
-		this.credit_card_number=credit_card_number;
-		this.subscriberNumber=Subscriber_number;
+		this.isLoggedIn = isLoggedIn;
+		this.storeName = storeName;
 	}
-	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
+
+	public String getUserName() {
+		return userName;
 	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-		//System.out.println("ID set to "+id);
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	/**
-	 * @return the lName
-	 */
-	public String getLastname() {
-		return lastName;
+
+	public String getPassword() {
+		return password;
 	}
-	/**
-	 * @param name the lName to set
-	 */
-	public void setLastName(String name) {
-		lastName = name;
-		//System.out.println("Last name set to "+name);
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	/**
-	 * @return the pName
-	 */
-	public String getFirstname() {
+
+	public String getFirstName() {
 		return firstName;
 	}
-	/**
-	 * @param name the pName to set
-	 */
-	public void setFirsname(String name) {
-		firstName = name;
-		//System.out.println("Private name set to "+name);
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	
-	
-	public String getPhone_number() {
-		return phone_number;
+
+	public String getLastName() {
+		return lastName;
 	}
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCredit_card_number() {
-		return credit_card_number;
+
+	public String getPhoneNumer() {
+		return phoneNumer;
 	}
-	public void setCredit_card_number(String credit_card_number) {
-		this.credit_card_number = credit_card_number;
+
+	public void setPhoneNumer(String phoneNumer) {
+		this.phoneNumer = phoneNumer;
 	}
-	public String getSubscriber_number() {
-		return subscriberNumber;
+
+	public String getId() {
+		return id;
 	}
-	public void setSubscriber_number(String subscriber_number) {
-		subscriberNumber = subscriber_number;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	@Override
-	public String toString() {
-		return "Subscriber Details:\n id=" + id + "\n first name=" + firstName + "\n last name=" + lastName + "\n phone_number=" + phone_number
-				+ "\n email=" + email + "\n credit card number=" + credit_card_number + "\n Subscriber number="
-				+ subscriberNumber + " ";
+
+	public String getIsLoggedIn() {
+		return isLoggedIn;
+	}
+
+	public void setIsLoggedIn(String isLoggedIn) {
+		this.isLoggedIn = isLoggedIn;
+	}
+
+	public String getStoreName() {
+		return storeName;
+	}
+
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
 	}
 	
 }

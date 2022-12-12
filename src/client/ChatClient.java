@@ -3,12 +3,13 @@ package client;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import gui.LoginScreensController;
 import ocsf.client.AbstractClient;
 
 public class ChatClient extends AbstractClient{
 	// Class variables *************************************************
    	  ChatIF clientUI; 
-	  public static Subscriber s = new Subscriber(null,null,null,null,null,null,null);
+	  public static Subscriber subscriber1 = new Subscriber(null,null,null,null,null,null,null,null,null,null);
 	  public static boolean awaitResponse = false;
 	//******************************************************************
 	  
@@ -39,36 +40,45 @@ public class ChatClient extends AbstractClient{
 	  public void handleMessageFromServer(Object msg) 
 	  {
 		  System.out.println("--> handleMessageFromServer");
-		  ArrayList<String> m =(ArrayList<String>) msg;
+		  ArrayList<String> massageFromServer =(ArrayList<String>) msg;
 		  awaitResponse = false;
-		  if(m.get(0).equals("quit")) {
-			  m.clear();
+		  String action = massageFromServer.get(0);
+		  massageFromServer.remove(0);
+		  
+		  switch(action) {
+		  case "quit":
+			  massageFromServer.clear();
 			  quit();
+			  break;
+		  case "userNameAndPasswordRetVal":
+			  LoginScreensController.subscriberDetails(massageFromServer);
 		  }
-		  if(m.get(0).equals("display")) {
-			  m.remove(0); 
-			  if(m.size()>1) {
-				  s.setFirsname(m.get(0));
-				  s.setLastName(m.get(1));
-				  s.setId(m.get(2));
-				  s.setPhone_number(m.get(3));
-				  s.setEmail(m.get(4));
-				  s.setCredit_card_number(m.get(5));
-				  s.setSubscriber_number(m.get(6));
-				  m.clear();
+		  
+		 /*
+		  if(massageFromServer.get(0).equals("userNameAndPasswordRetVal")) {
+			  
+			  if(massageFromServer.size()>1) {
+				  subscriber1.setFirsname(massageFromServer.get(0));
+				  subscriber1.setLastName(massageFromServer.get(1));
+				  subscriber1.setId(massageFromServer.get(2));
+				  subscriber1.setPhone_number(massageFromServer.get(3));
+				  subscriber1.setEmail(massageFromServer.get(4));
+				  subscriber1.setCredit_card_number(massageFromServer.get(5));
+				  subscriber1.setSubscriber_number(massageFromServer.get(6));
+				  massageFromServer.clear();
 			  }
 			  else {
-				  s.setFirsname("Subscriber not found");
-				  s.setLastName("Subscriber not found");
-				  s.setId("Subscriber not found");
-				  s.setPhone_number("Subscriber not found");
-				  s.setEmail("Subscriber not found");
-				  s.setCredit_card_number("Subscriber not found");
-				  s.setSubscriber_number("Subscriber not found");
-				  m.clear();
-				  
-			  }
-		  }
+				  subscriber1.setFirsname("Subscriber not found");
+				  subscriber1.setLastName("Subscriber not found");
+				  subscriber1.setId("Subscriber not found");
+				  subscriber1.setPhone_number("Subscriber not found");
+				  subscriber1.setEmail("Subscriber not found");
+				  subscriber1.setCredit_card_number("Subscriber not found");
+				  subscriber1.setSubscriber_number("Subscriber not found");
+				  massageFromServer.clear();
+				  }
+			  }*/
+		  
 		  
 		  
 	  }

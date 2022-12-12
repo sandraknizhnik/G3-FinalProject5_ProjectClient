@@ -44,10 +44,14 @@ public class ConnectController {
     	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		Stage primaryStage = new Stage();
 		primaryStage.initStyle(StageStyle.UNDECORATED);
+		
 		ClientUI.setMyClientchat(new ClientController(ip_server.getText(), 5555));
-		ClientGuiController cgc = new ClientGuiController();
+		
+		LoginScreensController LSC = new LoginScreensController();
+		
     	ClientUI.getMyClientchat().openConnection();
-    	cgc.start(primaryStage);
+    	LSC.start(primaryStage);
+    	
     	
     }
     
@@ -86,6 +90,7 @@ public class ConnectController {
 		primaryStage.setTitle("Connect");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
 }

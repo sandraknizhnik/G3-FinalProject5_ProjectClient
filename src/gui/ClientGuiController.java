@@ -95,16 +95,15 @@ public class ClientGuiController {
 			msg.add(id);
 			sendMessageToServer(msg);
 			
-			if(ChatClient.s.getFirstname().equals("Error"))
+			if(ChatClient.subscriber1.getFirstName().equals("Error"))
 			{
 				System.out.println("Student ID Not Found");
-				loadsubscriber(ChatClient.s);
+				loadsubscriber(ChatClient.subscriber1);
 				
 			}
 			else {
 				System.out.println("Student ID Found");
-				loadsubscriber(ChatClient.s);
-			
+				loadsubscriber(ChatClient.subscriber1);
 				
 			}
 		}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="772.0" style="-fx-background-color: #CAC7CE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="71.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: E5E4E2;" text="New Order" textFill="#ab4141" textOverrun="CLIP">
+         <font>
+            <Font name="Arial Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="36.0" layoutY="41.0" prefHeight="55.0" prefWidth="367.0" text="Welcome back Nir!" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3947368562221527" green="0.08954678475856781" blue="0.08954678475856781" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8039215803146362" green="0.15294118225574493" blue="0.15294118225574493" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="71.0" layoutY="321.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: E5E4E2;" text="Order Settings" textFill="#6b0e00">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="22.0" layoutY="487.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="123.0" style="-fx-background-color: E5E4E2;" text="Log Out" textFill="#6b0e00">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="72.0" layoutY="115.0" prefHeight="38.0" prefWidth="134.0" text="User Status:" textFill="#6b0e00">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="415.0" fitWidth="422.0" layoutX="357.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@regular%20logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="192.0" layoutY="117.0" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: #CAC7CE;" text="Approved">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.03947368264198303" green="0.014437134377658367" blue="0.014437134377658367" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.31578946113586426" green="0.22076024115085602" blue="0.22076024115085602" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="260.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@5970645.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="259.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@1874014-200.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="109.0" fitWidth="150.0" layoutX="332.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@זכויות%20יוצרים.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="704.0" layoutY="14.0" minWidth="44.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="44.0" style="-fx-background-color: #CAC7CE;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="17.0">
+               <image>
+                  <Image url="@../../../8995303.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="20.0" fitWidth="17.0" layoutX="-230.0">
+         <image>
+            <Image url="@../../../8995303.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
