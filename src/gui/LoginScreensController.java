@@ -19,6 +19,10 @@ import javafx.stage.Stage;
 public class LoginScreensController {
 	
 	@FXML
+    private Button exitBTN;
+
+	
+	@FXML
     private Label ErrorUserPass;
 
     @FXML
@@ -67,6 +71,12 @@ public class LoginScreensController {
 			}
     	}
     }
+    
+    @FXML
+    void exitBTNPress(ActionEvent event) {
+
+    }
+    
     
     public static void subscriberDetails(ArrayList<String> arrFromServer){
     	arrFromServerRet = arrFromServer;
