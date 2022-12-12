@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import client.ChatClient;
 import client.ClientController;
 import client.ClientUI;
+import client.Subscriber;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import logic.Subscriber;
-import ocsf.server.ConnectionToClient;
+
 
 
 public class ClientGuiController {
