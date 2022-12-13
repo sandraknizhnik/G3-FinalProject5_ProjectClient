@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screens.AreaManagerReportViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screens.AreaManagerReportViewController">
    <children>
       <AnchorPane layoutY="-6.0" prefHeight="478.0" prefWidth="421.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
          <children>
@@ -28,12 +28,12 @@
             </Label>
             <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="46.0" layoutY="149.0">
                <image>
-                  <Image url="@4718735.png" />
+                  <Image url="@../images/4718735.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="49.0" layoutY="264.0">
                <image>
-                  <Image url="@2693560.png" />
+                  <Image url="@../images/2693560.png" />
                </image>
             </ImageView>
             <TextField layoutX="274.0" layoutY="88.0" prefHeight="31.0" prefWidth="111.0" text="North">
@@ -63,9 +63,9 @@
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="35.0" fitWidth="85.0" layoutX="172.0" layoutY="2.0">
+                  <ImageView fitHeight="46.0" fitWidth="85.0" layoutX="172.0" layoutY="-9.0">
                      <image>
-                        <Image url="@../../COPYWRITES.png" />
+                        <Image url="@../images/COPYRIGHTS.png" />
                      </image>
                   </ImageView>
                </children>
@@ -97,7 +97,7 @@
       </AnchorPane>
       <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="46.0" layoutY="81.0">
          <image>
-            <Image url="@9148306.png" />
+            <Image url="@../images/9148306.png" />
          </image>
       </ImageView>
       <Label layoutX="145.0" layoutY="61.0" textOverrun="CENTER_WORD_ELLIPSIS">
