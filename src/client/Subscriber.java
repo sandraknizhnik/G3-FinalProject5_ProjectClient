@@ -1,6 +1,6 @@
 package client;
 
-
+//
 public class Subscriber {
 	// Class variables *************************************************
 	private String userName;
