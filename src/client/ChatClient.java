@@ -52,6 +52,7 @@ public class ChatClient extends AbstractClient{
 			  break;
 		  case "userNameAndPasswordRetVal":
 			  LoginScreensController.subscriberDetails(massageFromServer);
+		
 		  }
 		  
 		 /*

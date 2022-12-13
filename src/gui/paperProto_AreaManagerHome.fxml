@@ -12,9 +12,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AreaManagerHomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager_CEO_ViewController">
    <children>
-      <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="457.0" prefWidth="570.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
+      <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="458.0" prefWidth="453.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
          <children>
             <Label layoutX="30.0" layoutY="23.0" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
@@ -42,26 +42,21 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextArea layoutX="381.0" layoutY="125.0" prefHeight="200.0" prefWidth="164.0" text="1. Repository has been &#10;updated for machine&#10;number 5">
+            <TextArea layoutX="265.0" layoutY="188.0" prefHeight="200.0" prefWidth="164.0" text="1. Repository has been &#10;updated for machine&#10;number 5">
                <font>
                   <Font name="Bell MT" size="16.0" />
                </font></TextArea>
-            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="30.0" layoutY="266.0">
+            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="31.0" layoutY="153.0">
                <image>
-                  <Image url="@../images/2328966.png" />
+                  <Image url="@2328966.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="29.0" layoutY="188.0">
+            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="416.0" layoutY="169.0">
                <image>
-                  <Image url="@../images/70115.png" />
+                  <Image url="@9053401.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="532.0" layoutY="106.0">
-               <image>
-                  <Image url="@../images/9053401.png" />
-               </image>
-            </ImageView>
-            <TextField layoutX="243.0" layoutY="90.0" prefHeight="31.0" prefWidth="103.0" text="North">
+            <TextField layoutX="265.0" layoutY="90.0" prefHeight="34.0" prefWidth="162.0" text="North">
                <font>
                   <Font name="Bell MT" size="16.0" />
                </font>
@@ -73,48 +68,43 @@
             </Label>
             <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="31.0" layoutY="88.0">
                <image>
-                  <Image url="@../images/9148306.png" />
+                  <Image url="@9148306.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutY="5.0" prefHeight="45.0" prefWidth="570.0" style="-fx-background-color: #383c34;">
+            <AnchorPane layoutX="1.0" layoutY="5.0" prefHeight="46.0" prefWidth="483.0" style="-fx-background-color: #383c34;">
                <children>
-                  <Button fx:id="ExitBtn" layoutX="530.0" layoutY="7.0" mnemonicParsing="false" onAction="#pressExitBtn" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+                  <Button layoutX="445.0" layoutY="7.0" mnemonicParsing="false" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Label layoutX="97.0" layoutY="1.0" prefHeight="40.0" prefWidth="397.0" text="Welcome back Dor!  " textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
+                  <Label layoutX="71.0" layoutY="3.0" prefHeight="40.0" prefWidth="363.0" text="Welcome back Dor!  " textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
                      <font>
                         <Font name="Broadway" size="33.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="381.0" layoutY="90.0" text="Latest updates" textFill="#7c6e48">
+            <Label layoutX="265.0" layoutY="153.0" text="Latest updates" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="7.0" layoutY="418.0" prefHeight="39.0" prefWidth="563.0" style="-fx-background-color: #343c34;">
+            <AnchorPane layoutX="8.0" layoutY="419.0" prefHeight="39.0" prefWidth="476.0" style="-fx-background-color: #343c34;">
                <children>
-                  <ImageView fitHeight="62.0" fitWidth="85.0" layoutX="219.0" layoutY="-17.0">
-                     <image>
-                        <Image url="@../images/COPYRIGHTS.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="SignOutbtn" layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="16.0" prefWidth="86.0" style="-fx-background-color: #f2e9c0;" text="Log Out" textFill="#343c34">
+                  <Button fx:id="SignOutbtn111" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="16.0" prefWidth="86.0" style="-fx-background-color: #f2e9c0;" text="Log Out" textFill="#343c34">
                      <font>
                         <Font name="Bell MT Bold" size="15.0" />
                      </font>
                   </Button>
+                  <ImageView fitHeight="35.0" fitWidth="85.0" layoutX="197.0" layoutY="2.0">
+                     <image>
+                        <Image url="@../../COPYWRITES.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
-            <Button fx:id="SetMinimummachinelevel" layoutX="72.0" layoutY="182.0" mnemonicParsing="false" onAction="#pressSetMinimummachinelevel" prefHeight="40.0" prefWidth="275.0" style="-fx-background-color: #cfa34b;" text="Set Minimum machine level" textFill="WHITE">
-               <font>
-                  <Font name="Bell MT Bold" size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="WatchReports" layoutX="72.0" layoutY="261.0" mnemonicParsing="false" onAction="#pressWatchReports" prefHeight="40.0" prefWidth="162.0" style="-fx-background-color: #cfa34b;" text="Watch Reports" textFill="WHITE">
+            <Button fx:id="SignOutbtn112" layoutX="73.0" layoutY="148.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="40.0" prefWidth="171.0" style="-fx-background-color: #cfa34b;" text="Watch Reports" textFill="WHITE">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font>

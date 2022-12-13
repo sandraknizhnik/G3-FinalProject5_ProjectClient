@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="714.0" style="-fx-background-color: #f8f4ec;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="714.0" style="-fx-background-color: #f8f4ec;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CustomerMainScreenController">
    <children>
       <Label layoutX="72.0" layoutY="115.0" prefHeight="38.0" prefWidth="134.0" textFill="#6b0e00">
          <font>
@@ -22,7 +22,7 @@
             <Image url="@../images/regular%20logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="212.0" layoutY="120.0" prefHeight="34.0" prefWidth="124.0" style="-fx-background-color: #CAC7CE;" text="Approved" textAlignment="JUSTIFY">
+      <Label fx:id="UserStatus" layoutX="212.0" layoutY="120.0" prefHeight="34.0" prefWidth="124.0" style="-fx-background-color: #CAC7CE;" textAlignment="JUSTIFY">
          <font>
             <Font name="Bell MT Bold" size="22.0" />
          </font>
@@ -45,7 +45,7 @@
       </Label>
       <AnchorPane layoutY="497.0" prefHeight="55.0" prefWidth="714.0" style="-fx-background-color: #343c34;">
          <children>
-            <Button fx:id="SignOutbtn111" layoutX="4.0" layoutY="5.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="44.0" prefWidth="95.0" style="-fx-background-color: #f2e9c0;" text="Log Out" textFill="#343c34">
+            <Button fx:id="SignOutbtn" layoutX="4.0" layoutY="5.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="44.0" prefWidth="95.0" style="-fx-background-color: #f2e9c0;" text="Log Out" textFill="#343c34">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font>
@@ -57,7 +57,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="SignOutbtn11" layoutX="71.0" layoutY="221.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="New Order" textFill="WHITE">
+      <Button fx:id="NewOrderBTN" layoutX="71.0" layoutY="221.0" mnemonicParsing="false" onAction="#PressNewOrder" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="New Order" textFill="WHITE">
          <font>
             <Font name="Bell MT Bold" size="24.0" />
          </font>
@@ -67,9 +67,9 @@
             <Image url="@../images/5970645.png" />
          </image>
       </ImageView>
-      <Button fx:id="SignOutbtn112" layoutX="71.0" layoutY="325.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="Order Settings" textFill="WHITE">
+      <Button fx:id="OrderManagmantBTN" layoutX="71.0" layoutY="325.0" mnemonicParsing="false" onAction="#pressOrderManagment" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="Order Managment" textFill="WHITE">
          <font>
-            <Font name="Bell MT Bold" size="24.0" />
+            <Font name="Bell MT Bold" size="20.0" />
          </font>
       </Button>
       <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="259.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
@@ -84,7 +84,7 @@
       </Label>
       <AnchorPane layoutX="-1.0" prefHeight="63.0" prefWidth="720.0" style="-fx-background-color: #383c34;">
          <children>
-            <Button layoutX="662.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="44.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+            <Button fx:id="exitBTN" layoutX="662.0" layoutY="10.0" mnemonicParsing="false" onAction="#pressExitBTN" prefHeight="40.0" prefWidth="44.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font>

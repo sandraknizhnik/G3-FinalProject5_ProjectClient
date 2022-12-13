@@ -173,5 +173,20 @@
             <Font name="Bell MT Bold" size="18.0" />
          </font>
       </Button>
+      <Label layoutX="459.0" layoutY="287.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="460.0" layoutY="350.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="331.0" layoutY="407.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

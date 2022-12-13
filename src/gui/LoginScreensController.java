@@ -8,6 +8,7 @@ import client.ClientUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -15,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class LoginScreensController {
 	
@@ -44,7 +46,8 @@ public class LoginScreensController {
 	private static ArrayList<String> arrFromServerRet;
 
     @FXML
-    void pressLogIn(ActionEvent event) throws IOException {
+    void pressLogIn(ActionEvent event) throws Exception {
+    	Stage primaryStage = new Stage();
     	ArrayList<String> msg = new ArrayList<>();
     	userNameStr = username.getText();
     	passwordStr = password.getText();
@@ -52,29 +55,49 @@ public class LoginScreensController {
     	if(userNameStr.trim().isEmpty() || passwordStr.trim().isEmpty()) {
     		ErrorUserPass.setText("Invalid UserName Or Password !");
     	}
+    	
     	else {
     		msg.add("UserNameAndPasswordCheck");
     		msg.add(userNameStr);
     		msg.add(passwordStr);
-    		ClientUI.chat.accept(msg);
     		
+    		ClientUI.chat.accept(msg);
+    		System.out.println(arrFromServerRet);
     		if(arrFromServerRet.get(0).equals("Error"))
 			{
     			ErrorUserPass.setText("Username Or Password Incorrect");		
 			}
+    		else if(arrFromServerRet.get(3).equals("1")) {
+	    		ErrorUserPass.setText("User Is Already Logged in");
+	    	}
 			else {
+				switch(arrFromServerRet.get(2)) {
+					case "Customer":
+						((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+						primaryStage = new Stage();
+						primaryStage.initStyle(StageStyle.UNDECORATED);
+						CustomerMainScreenController cmc = new CustomerMainScreenController();
+						cmc.start(primaryStage,userNameStr);		
+					case "AreaManager":
+						((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+						primaryStage = new Stage();
+						primaryStage.initStyle(StageStyle.UNDECORATED);
+						AreaManagerHomePageController amgpc = new AreaManagerHomePageController();
+						amgpc.start(primaryStage);
+						
 				
-				System.out.println("Student ID Found");
-	
-			 
-				
+				}
 			}
     	}
     }
     
     @FXML
-    void exitBTNPress(ActionEvent event) {
-
+    void exitBTNPress(ActionEvent event) throws IOException {
+    	ArrayList<String> msg = new ArrayList<>();
+		msg.add("quit");
+		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		ClientUI.chat.accept(msg);
+		System.exit(1);
     }
     
     

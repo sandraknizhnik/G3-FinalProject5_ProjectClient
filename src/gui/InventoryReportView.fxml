@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,246 +10,106 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screens.InventoryReportViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager_CEO_ViewController">
    <children>
-      <AnchorPane layoutY="-2.0" prefHeight="439.0" prefWidth="720.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
+      <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="458.0" prefWidth="453.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
          <children>
-            <BarChart layoutX="345.0" layoutY="78.0" prefHeight="320.0" prefWidth="374.0">
-               <xAxis>
-                  <CategoryAxis side="BOTTOM" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis side="LEFT" />
-               </yAxis>
-            </BarChart>
-            <Label fx:id="ThirdProductNameChartLabel" layoutX="585.0" layoutY="381.0" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Label layoutX="30.0" layoutY="23.0" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
-                  <Font name="Calibri Bold" size="18.0" />
+                  <Font name="Arial Black" size="33.0" />
                </font>
-            </Label>
-            <Label fx:id="FirstProductNameChartLabel1" layoutX="360.0" layoutY="69.0" text="Quantity" textFill="#00000082" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="52.0" layoutY="120.0" text="Managment area" textFill="#7c6e48">
-               <font>
-                  <Font name="Bell MT Bold" size="22.0" />
-               </font>
-            </Label>
-            <TextField layoutX="261.0" layoutY="120.0" prefHeight="25.0" prefWidth="85.0" text="North">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font></TextField>
-            <Label layoutX="51.0" layoutY="174.0" text="Machine number" textFill="#7c6e48">
-               <font>
-                  <Font name="Bell MT Bold" size="22.0" />
-               </font>
-            </Label>
-            <TextField layoutX="261.0" layoutY="170.0" prefHeight="25.0" prefWidth="85.0" text="2">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font></TextField>
-            <Label layoutX="50.0" layoutY="224.0" text="Total lack" textFill="#7c6e48">
-               <font>
-                  <Font name="Bell MT Bold" size="22.0" />
-               </font>
-            </Label>
-            <TextField layoutX="260.0" layoutY="221.0" prefHeight="33.0" prefWidth="86.0" text="0">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font></TextField>
-            <Label layoutX="50.0" layoutY="276.0" text="Total amount" textFill="#7c6e48">
-               <font>
-                  <Font name="Bell MT Bold" size="22.0" />
-               </font>
-            </Label>
-            <TextField layoutX="260.0" layoutY="274.0" prefHeight="33.0" prefWidth="86.0" text="50">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font></TextField>
-            <Label fx:id="FirstProductNameChartLabel11" layoutX="402.0" layoutY="376.0" text="Bisli" textFill="#00000082" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="FirstProductNameChartLabel111" layoutX="459.0" layoutY="376.0" text="Bamba" textFill="#00000082" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="FirstProductNameChartLabel1111" layoutX="522.0" layoutY="376.0" text="Doritos" textFill="#00000082" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="FirstProductNameChartLabel11111" layoutX="587.0" layoutY="375.0" text="Pringles" textFill="#00000082" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="FirstProductNameChartLabel111111" layoutX="660.0" layoutY="376.0" text="Coke" textFill="#00000082" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="399.0" layoutY="174.0" stroke="#e5e8e3" strokeType="INSIDE" width="26.0">
-               <fill>
+               <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.6011411547660828" green="0.8157894611358643" blue="0.40034112334251404" />
+                              <Color red="0.41960784792900085" green="0.054901961237192154" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.561951756477356" green="0.5921052694320679" blue="0.5855720043182373" />
+                              <Color red="0.8549019694328308" green="0.3764705955982208" blue="0.3764705955982208" />
                            </color>
                         </Stop>
                      </stops>
                   </LinearGradient>
-               </fill>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="220.0" layoutX="464.0" layoutY="154.0" stroke="#e5e8e3" strokeType="INSIDE" width="26.0">
-               <fill>
-                  <LinearGradient endX="1.0" endY="0.6966824644549763" startY="0.13744075829383884">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.9210526347160339" green="0.9210526347160339" blue="0.08528265357017517" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6959429979324341" green="0.7105262875556946" blue="0.5855262875556946" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="166.0" layoutX="532.0" layoutY="208.0" stroke="#e5e8e3" strokeType="INSIDE" width="26.0">
-               <fill>
-                  <LinearGradient endX="1.0" endY="0.6966824644549763">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.9200000166893005" green="0.7701714038848877" blue="0.09200000017881393" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.006711409395973154">
-                           <color>
-                              <Color red="0.9200000166893005" green="0.7701714038848877" blue="0.09200000017881393" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.8421052694320679" green="0.8114359974861145" blue="0.61208575963974" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="103.0" layoutX="598.0" layoutY="272.0" stroke="#e5e8e3" strokeType="INSIDE" width="26.0">
-               <fill>
-                  <LinearGradient endX="1.0" endY="0.6966824644549763">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.9200000166893005" green="0.7701714038848877" blue="0.09200000017881393" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.006711409395973154">
-                           <color>
-                              <Color red="0.9200000166893005" green="0.23394282162189484" blue="0.09200000017881393" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6842105388641357" green="0.5770386457443237" blue="0.5733430981636047" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="153.0" layoutX="662.0" layoutY="222.0" stroke="#e5e8e3" strokeType="INSIDE" width="26.0">
-               <fill>
-                  <LinearGradient endX="1.0" endY="0.6966824644549763">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.9200000166893005" green="0.7701714038848877" blue="0.09200000017881393" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.006711409395973154">
-                           <color>
-                              <Color red="0.10526315867900848" green="0.10194931924343109" blue="0.10136452317237854" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6315789222717285" green="0.6004873514175415" blue="0.5994151830673218" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Rectangle>
-            <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="3.0" layoutY="221.0">
+               </textFill>
+            </Label>
+            <Label layoutX="387.0" layoutY="91.0" textFill="#5e2525">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <TextArea layoutX="265.0" layoutY="188.0" prefHeight="200.0" prefWidth="164.0" text="1. Repository has been &#10;updated for machine&#10;number 5">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font></TextArea>
+            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="31.0" layoutY="153.0">
                <image>
-                  <Image url="@../images/5400905.png" />
+                  <Image url="@../images/2328966.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="7.0" layoutY="270.0">
+            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="416.0" layoutY="169.0">
                <image>
-                  <Image url="@../images/1942650.png" />
+                  <Image url="@../images/9053401.png" />
                </image>
             </ImageView>
-            <AnchorPane prefHeight="39.0" prefWidth="720.0" style="-fx-background-color: #383c34;">
+            <TextField layoutX="265.0" layoutY="90.0" prefHeight="34.0" prefWidth="162.0" text="North">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="72.0" layoutY="90.0" text="Managment area" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="31.0" layoutY="88.0">
+               <image>
+                  <Image url="@../images/9148306.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="1.0" layoutY="5.0" prefHeight="46.0" prefWidth="483.0" style="-fx-background-color: #383c34;">
                <children>
-                  <Button layoutX="680.0" layoutY="7.0" mnemonicParsing="false" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+                  <Button layoutX="445.0" layoutY="7.0" mnemonicParsing="false" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Label layoutX="207.0" layoutY="6.0" prefHeight="35.0" prefWidth="305.0" text="Inventory Report" textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
+                  <Label layoutX="71.0" layoutY="3.0" prefHeight="40.0" prefWidth="363.0" text="Welcome back Dor!  " textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
                      <font>
                         <Font name="Broadway" size="33.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutY="400.0" prefHeight="39.0" prefWidth="720.0" style="-fx-background-color: #343c34;">
+            <Label layoutX="265.0" layoutY="153.0" text="Latest updates" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="8.0" layoutY="419.0" prefHeight="39.0" prefWidth="476.0" style="-fx-background-color: #343c34;">
                <children>
-                  <Button fx:id="SignOutbtn1" layoutX="4.0" layoutY="3.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #f2e9c0;" text="Back" textFill="#343c34">
+                  <Button fx:id="SignOutbtn111" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="16.0" prefWidth="86.0" style="-fx-background-color: #f2e9c0;" text="Log Out" textFill="#343c34">
                      <font>
-                        <Font name="Bell MT Bold" size="16.0" />
+                        <Font name="Bell MT Bold" size="15.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="56.0" fitWidth="85.0" layoutX="327.0" layoutY="-6.0">
+                  <ImageView fitHeight="50.0" fitWidth="85.0" layoutX="196.0" layoutY="-6.0">
                      <image>
                         <Image url="@../images/COPYRIGHTS.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
+            <Button fx:id="SignOutbtn112" layoutX="73.0" layoutY="148.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="40.0" prefWidth="171.0" style="-fx-background-color: #cfa34b;" text="Watch Reports" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="11.0" layoutY="115.0">
-         <image>
-            <Image url="@../images/9148306.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="11.0" layoutY="166.0">
-         <image>
-            <Image url="@../images/4718735.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
