@@ -3,6 +3,7 @@ package gui;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import client.ClientController;
 import client.ClientUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,8 +14,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class CustomerMainScreenController {
+	
+	
+	
 
     @FXML
     private Button NewOrderBTN;
@@ -33,28 +38,28 @@ public class CustomerMainScreenController {
     private double xoffset;
 	private double yoffset;
 	private String userNameStr;
-    @FXML
+    
+	
+	
+	
+	
+	
+
+	@FXML
     void PressNewOrder(ActionEvent event) {
 
     }
 
     @FXML
     void pressExitBTN(ActionEvent event) throws IOException {
-    	System.out.println(userNameStr);
     	ArrayList<String> msg = new ArrayList<>();
-    	signOutFromDB(this.userNameStr);
 		msg.add("quit");
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		ClientUI.chat.accept(msg);
 		System.exit(1);
 
     }
-    void signOutFromDB(String userName) throws IOException {
-    	ArrayList<String> msg = new ArrayList<>();
-    	msg.add("signOutUser");
-    	msg.add(userName);
-    	ClientUI.chat.accept(msg);
-    }
+    
     
 
     @FXML
@@ -62,14 +67,21 @@ public class CustomerMainScreenController {
     }
 
     @FXML
-    void pressSignOut(ActionEvent event) throws IOException {
-    	signOutFromDB(this.userNameStr);
+    void pressSignOut(ActionEvent event) throws Exception {
+    	ArrayList<String> msg = new ArrayList<>();
+    	msg.add("SignOut");
+		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		ClientUI.chat.accept(msg);
+		Stage primaryStage = new Stage();
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		LoginScreensController LSC = new LoginScreensController();
+    	LSC.start(primaryStage);
+    	
     }
     
-    public void start(Stage primaryStage, String userNameStr) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
     	
 		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/CustomerMainScreen.fxml"));
-		this.userNameStr = userNameStr;
 		//event handler for when the mouse is pressed AND dragged to move the window
 		root.setOnMousePressed(event1 -> {
             xoffset = event1.getSceneX();
