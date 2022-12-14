@@ -40,7 +40,7 @@ public class ConnectController {
 	 */
     @FXML
     void pressConnect(ActionEvent event) throws Exception {
-    	
+
     	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		Stage primaryStage = new Stage();
 		primaryStage.initStyle(StageStyle.UNDECORATED);

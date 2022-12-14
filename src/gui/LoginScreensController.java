@@ -60,9 +60,8 @@ public class LoginScreensController {
     		msg.add("UserNameAndPasswordCheck");
     		msg.add(userNameStr);
     		msg.add(passwordStr);
-    		
+
     		ClientUI.chat.accept(msg);
-    		System.out.println(arrFromServerRet);
     		if(arrFromServerRet.get(0).equals("Error"))
 			{
     			ErrorUserPass.setText("Username Or Password Incorrect");		
@@ -74,16 +73,16 @@ public class LoginScreensController {
 				switch(arrFromServerRet.get(2)) {
 					case "Customer":
 						((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
-						primaryStage = new Stage();
 						primaryStage.initStyle(StageStyle.UNDECORATED);
 						CustomerMainScreenController cmc = new CustomerMainScreenController();
-						cmc.start(primaryStage,userNameStr);		
+						cmc.start(primaryStage);	
+						break;
 					case "AreaManager":
 						((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
-						primaryStage = new Stage();
 						primaryStage.initStyle(StageStyle.UNDECORATED);
 						AreaManagerHomePageController amgpc = new AreaManagerHomePageController();
 						amgpc.start(primaryStage);
+						break;
 						
 				
 				}
