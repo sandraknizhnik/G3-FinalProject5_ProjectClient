@@ -49,12 +49,14 @@ public class ChatClient extends AbstractClient{
 		  switch(action) {
 		  case "getUserData":
 			  CustomerMainScreenController.getUserData(massageFromServer);
+			  break;
 		  case "quit":
 			  massageFromServer.clear();
 			  quit();
 			  break;
 		  case "userNameAndPasswordRetVal":
 			  LoginScreensController.subscriberDetails(massageFromServer);
+			  break;
 		
 		  }
 		  

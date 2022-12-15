@@ -83,6 +83,13 @@ public class LoginScreensController {
 						AreaManagerHomePageController amgpc = new AreaManagerHomePageController();
 						amgpc.start(primaryStage);
 						break;
+					case "ServiceRepresentative":
+						((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+						primaryStage.initStyle(StageStyle.UNDECORATED);
+						ServiceRepresentativeHomePageController srhpc = new ServiceRepresentativeHomePageController();
+						srhpc.start(primaryStage);
+						break;
+						
 						
 				
 				}

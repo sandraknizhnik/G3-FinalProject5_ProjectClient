@@ -1,16 +1,12 @@
 package gui;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-import client.ClientController;
 import client.ClientUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,54 +15,38 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class CustomerMainScreenController implements Initializable {
-	
-	
-	
-	public CustomerMainScreenController() {
-		super();
-		
-		
-	}
-	@FXML
-    private Label WelcomeLabel;
-	
-    @FXML
-    private Button NewOrderBTN;
+public class ServiceRepresentativeHomePageController {
 
     @FXML
-    private Button OrderManagmantBTN;
+    private Button AddNewCustomer;
+
+    @FXML
+    private Button ExitBtn;
+
+    @FXML
+    private Label NameOfUserLabel;
 
     @FXML
     private Button SignOutbtn;
-
-    @FXML
-    private Label UserStatus;
-
-    @FXML
-    private Button exitBTN;
     private double xoffset;
 	private double yoffset;
-	private static ArrayList<String> arrFromServerRet;
 
-	@FXML
-    void PressNewOrder(ActionEvent event) {
-
+    @FXML
+    void pressAddNewCustomer(ActionEvent event) throws Exception {
+    	Stage primaryStage = new Stage();
+    	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		ServiceRepresentativeAddNewCustomerController sracc = new ServiceRepresentativeAddNewCustomerController();
+		sracc.start(primaryStage);
     }
 
     @FXML
-    void pressExitBTN(ActionEvent event) throws IOException {
+    void pressExitBtn(ActionEvent event) throws IOException {
     	ArrayList<String> msg = new ArrayList<>();
 		msg.add("quit");
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		ClientUI.chat.accept(msg);
 		System.exit(1);
-    }
-    
-    
-
-    @FXML
-    void pressOrderManagment(ActionEvent event) {
     }
 
     @FXML
@@ -81,14 +61,10 @@ public class CustomerMainScreenController implements Initializable {
     	LSC.start(primaryStage);
     	
     }
-    public static void getUserData(ArrayList<String> arrFromServer){
-    	arrFromServerRet = arrFromServer;
-    }
     
-    
-    public void start(Stage primaryStage) throws Exception {
+ public void start(Stage primaryStage) throws Exception {
     	
-		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/CustomerMainScreen.fxml"));
+		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/ServicrRepresentativeHomePage.fxml"));
 		//event handler for when the mouse is pressed AND dragged to move the window
 		root.setOnMousePressed(event1 -> {
             xoffset = event1.getSceneX();
@@ -107,19 +83,5 @@ public class CustomerMainScreenController implements Initializable {
 
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		ArrayList<String> msg1 = new ArrayList<>();
-		msg1.add("getUserData");
-    	try {
-			ClientUI.chat.accept(msg1);
-		} catch (IOException e) {
-			 //TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	WelcomeLabel.setText("Welcome back " + arrFromServerRet.get(1));
-    	UserStatus.setText(arrFromServerRet.get(3));
-		
-	}
 
 }
