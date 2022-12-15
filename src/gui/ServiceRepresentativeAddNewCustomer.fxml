@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="510.0" style="-fx-background-color: #f8f4ec;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ServiceRepresentativeAddNewCustomerController">
+   <children>
+      <Label layoutX="167.0" layoutY="14.0">
+         <font>
+            <Font name="System Bold Italic" size="33.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#690000" />
+                  <Stop color="#ff000030" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="18.0" layoutY="74.0" underline="true">
+         <font>
+            <Font name="System Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="119.0">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="178.0" />
+      <Label layoutX="27.0" layoutY="206.0" text="Month:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font></Label>
+      <ComboBox fx:id="MonthOnCard" layoutX="103.0" layoutY="204.0" prefHeight="31.0" prefWidth="64.0" promptText="01" style="-fx-background-color: #cfcbc8;" />
+      <ComboBox fx:id="YearOnCard" layoutX="256.0" layoutY="204.0" prefHeight="31.0" prefWidth="77.0" promptText="2022" style="-fx-background-color: #cfcbc8;" />
+      <Label layoutX="361.0" layoutY="204.0" text="CVV:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="323.0" />
+      <Label layoutX="24.0" layoutY="433.0" />
+      <Label layoutX="119.0" layoutY="496.0" prefHeight="31.0" prefWidth="263.0" textFill="#6b0e00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="343.0" layoutY="59.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="459.0" layoutY="111.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="167.0" layoutY="174.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="331.0" layoutY="173.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="45.0" prefWidth="510.0" style="-fx-background-color: #383c34;">
+         <children>
+            <Button layoutX="470.0" layoutY="7.0" mnemonicParsing="false" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="78.0" layoutY="3.0" prefHeight="39.0" prefWidth="388.0" text="Add New Customer" textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="625.0" prefHeight="39.0" prefWidth="510.0" style="-fx-background-color: #343c34;">
+         <children>
+            <Button fx:id="BackBTN" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#pressBackBTN" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #f2e9c0;" text="Back" textFill="#343c34">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="58.0" fitWidth="85.0" layoutX="213.0" layoutY="-10.0">
+               <image>
+                  <Image url="@../images/COPYRIGHTS.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="CreditCardNumber" layoutX="231.0" layoutY="142.0" prefHeight="31.0" prefWidth="233.0" text="Example: 4580-3672-8373-3535">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="26.0" layoutY="90.0" text="Customer Type:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="144.0" text="Credit card number:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="CVVOnCard" layoutX="414.0" layoutY="202.0" prefHeight="31.0" prefWidth="50.0" text="123">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="460.0" layoutY="171.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="202.0" layoutY="206.0" text="Year:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="355.0" prefHeight="27.0" prefWidth="50.0" text="ID:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ID" layoutX="202.0" layoutY="352.0" prefHeight="31.0" prefWidth="233.0" text="Example: 313393324">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="SubmitBTN" layoutX="201.0" layoutY="542.0" mnemonicParsing="false" onAction="#pressSubmitBTN" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #cfa34b;" text="Submit" textFill="WHITE">
+         <font>
+            <Font name="Bell MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="431.0" layoutY="226.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="chooseCustomerType" layoutX="254.0" layoutY="88.0" prefHeight="31.0" prefWidth="94.0" promptText="regular" style="-fx-background-color: #cfcbc8;" />
+      <TextField fx:id="FirstName" layoutX="202.0" layoutY="252.0" prefHeight="31.0" prefWidth="233.0" text="Example: Kfir">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="29.0" layoutY="255.0" text="First Name:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="LastName" layoutX="202.0" layoutY="302.0" prefHeight="31.0" prefWidth="233.0" text="Example: Hemo">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="29.0" layoutY="305.0" text="Last Name:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="430.0" layoutY="274.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="431.0" layoutY="324.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="405.0" text="Email:" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="455.0" text="Phone Number" textFill="#7c6e48">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EmailText" layoutX="202.0" layoutY="402.0" prefHeight="31.0" prefWidth="233.0" text="Example: kfirhemo@Gmail.com">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="PhoneNumber" layoutX="202.0" layoutY="452.0" prefHeight="31.0" prefWidth="233.0" text="Example: 0547707184">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="431.0" layoutY="373.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="430.0" layoutY="425.0" prefHeight="58.0" prefWidth="32.0" text="*" textFill="RED">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

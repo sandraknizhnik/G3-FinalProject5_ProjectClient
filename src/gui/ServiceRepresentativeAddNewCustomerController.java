@@ -10,28 +10,64 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class AreaManagerHomePageController {
+public class ServiceRepresentativeAddNewCustomerController {
 
     @FXML
-    private Button ExitBtn;
+    private Button BackBTN;
 
     @FXML
-    private Button SetMinimummachinelevel;
+    private TextField CVVOnCard;
 
     @FXML
-    private Button SignOutbtn;
+    private TextField CreditCardNumber;
 
     @FXML
-    private Button WatchReports;
+    private TextField EmailText;
+
+    @FXML
+    private TextField FirstName;
+
+    @FXML
+    private TextField ID;
+
+    @FXML
+    private TextField LastName;
+
+    @FXML
+    private ComboBox<?> MonthOnCard;
+
+    @FXML
+    private TextField PhoneNumber;
+
+    @FXML
+    private Button SubmitBTN;
+
+    @FXML
+    private ComboBox<?> YearOnCard;
+
+    @FXML
+    private ComboBox<?> chooseCustomerType;
     private double xoffset;
 	private double yoffset;
 
     @FXML
-    void pressExitBtn(ActionEvent event) throws IOException {
+    void pressBackBTN(ActionEvent event) throws Exception {
+		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		Stage primaryStage = new Stage();
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		ServiceRepresentativeHomePageController srhpc = new ServiceRepresentativeHomePageController();
+		srhpc.start(primaryStage);
+
+    }
+
+    @FXML
+    void pressSubmitBTN(ActionEvent event) throws IOException {
     	ArrayList<String> msg = new ArrayList<>();
 		msg.add("quit");
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
@@ -39,32 +75,10 @@ public class AreaManagerHomePageController {
 		System.exit(1);
 
     }
-
-    @FXML
-    void pressSetMinimummachinelevel(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pressSignOut(ActionEvent event) throws Exception {
-    	ArrayList<String> msg = new ArrayList<>();
-    	msg.add("SignOut");
-		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
-		ClientUI.chat.accept(msg);
-		Stage primaryStage = new Stage();
-		primaryStage.initStyle(StageStyle.UNDECORATED);
-		LoginScreensController LSC = new LoginScreensController();
-    	LSC.start(primaryStage);
-
-    }
-
-    @FXML
-    void pressWatchReports(ActionEvent event) {
-
-    }
+    
     public void start(Stage primaryStage) throws Exception {
-		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/AreaManagerHomePage.fxml"));
-		
+    	
+		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/ServiceRepresentativeAddNewCustomer.fxml"));
 		//event handler for when the mouse is pressed AND dragged to move the window
 		root.setOnMousePressed(event1 -> {
             xoffset = event1.getSceneX();
@@ -80,6 +94,8 @@ public class AreaManagerHomePageController {
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+
 	}
+
 
 }
