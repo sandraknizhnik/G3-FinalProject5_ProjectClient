@@ -3,6 +3,7 @@ package client;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import gui.CustomerMainScreenController;
 import gui.LoginScreensController;
 import ocsf.client.AbstractClient;
 
@@ -46,6 +47,8 @@ public class ChatClient extends AbstractClient{
 		  massageFromServer.remove(0);
 		  
 		  switch(action) {
+		  case "getUserData":
+			  CustomerMainScreenController.getUserData(massageFromServer);
 		  case "quit":
 			  massageFromServer.clear();
 			  quit();
