@@ -20,7 +20,23 @@ public class CustomerMainScreenController {
 	
 	
 	
-
+	public CustomerMainScreenController() {
+		super();
+		ArrayList<String> msg1 = new ArrayList<>();
+		msg1.add("getUserData");
+    	try {
+			ClientUI.chat.accept(msg1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	//WelcomeLabel.setText("Welcome back " + arrFromServerRet.get(1));
+    	//UserStatus.setText(arrFromServerRet.get(3));
+		
+	}
+	@FXML
+    private Label WelcomeLabel;
+	
     @FXML
     private Button NewOrderBTN;
 
@@ -37,13 +53,7 @@ public class CustomerMainScreenController {
     private Button exitBTN;
     private double xoffset;
 	private double yoffset;
-	private String userNameStr;
-    
-	
-	
-	
-	
-	
+	private static ArrayList<String> arrFromServerRet;
 
 	@FXML
     void PressNewOrder(ActionEvent event) {
@@ -78,10 +88,16 @@ public class CustomerMainScreenController {
     	LSC.start(primaryStage);
     	
     }
+    public static void getUserData(ArrayList<String> arrFromServer){
+    	arrFromServerRet = arrFromServer;
+    }
+    
     
     public void start(Stage primaryStage) throws Exception {
     	
 		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/CustomerMainScreen.fxml"));
+		
+    	
 		//event handler for when the mouse is pressed AND dragged to move the window
 		root.setOnMousePressed(event1 -> {
             xoffset = event1.getSceneX();
@@ -97,6 +113,8 @@ public class CustomerMainScreenController {
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+    	
 	}
 
 }
