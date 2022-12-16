@@ -41,7 +41,7 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextArea fx:id="lastUpdatesTextArea" layoutX="381.0" layoutY="125.0" prefHeight="200.0" prefWidth="164.0" text="1. Repository has been &#10;updated for machine&#10;number 5">
+            <TextArea fx:id="lastUpdatesTextArea" layoutX="394.0" layoutY="130.0" prefHeight="200.0" prefWidth="164.0" text="1. Repository has been &#10;updated for machine&#10;number 5">
                <font>
                   <Font name="Bell MT" size="16.0" />
                </font></TextArea>
@@ -75,7 +75,7 @@
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="specificAreaLable" layoutX="236.0" layoutY="90.0" prefHeight="27.0" prefWidth="85.0" textFill="#7c6e48">
+            <Label fx:id="specificAreaLable" layoutX="246.0" layoutY="90.0" prefHeight="27.0" prefWidth="142.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
@@ -99,7 +99,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label fx:id="lastUpdatesLable" layoutX="381.0" layoutY="90.0" text="Latest updates" textFill="#7c6e48">
+            <Label fx:id="lastUpdatesLable" layoutX="394.0" layoutY="95.0" text="Latest updates" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>

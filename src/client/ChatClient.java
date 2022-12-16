@@ -3,6 +3,7 @@ package client;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import gui.AreaManagerHomePageController;
 import gui.CustomerMainScreenController;
 import gui.LoginScreensController;
 import ocsf.client.AbstractClient;
@@ -49,6 +50,9 @@ public class ChatClient extends AbstractClient{
 		  switch(action) {
 		  case "getUserData":
 			  CustomerMainScreenController.getUserData(massageFromServer);
+			  break;
+		  case "getUserDataAreaManager":
+			  AreaManagerHomePageController.getUserData(massageFromServer); 
 			  break;
 		  case "quit":
 			  massageFromServer.clear();

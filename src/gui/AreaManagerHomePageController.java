@@ -1,12 +1,15 @@
 package gui;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import client.ClientUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,19 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class AreaManagerHomePageController {
+public class AreaManagerHomePageController implements Initializable{
 
-    /*@FXML
-    private Button ExitBtn;
-
-    @FXML
-    private Button SetMinimummachinelevel;
-
-    @FXML
-    private Button SignOutbtn;
-
-    @FXML
-    private Button WatchReports;*/
 	 @FXML
 	 private ImageView approveRequestImg;
 
@@ -86,7 +78,9 @@ public class AreaManagerHomePageController {
 	    
     private double xoffset;
 	private double yoffset;
+	private static ArrayList<String> arrFromServerRet;
 
+	// press exit button from area manager page
     @FXML
     void pressExitBtn(ActionEvent event) throws IOException {
     	ArrayList<String> msg = new ArrayList<>();
@@ -94,12 +88,11 @@ public class AreaManagerHomePageController {
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		ClientUI.chat.accept(msg);
 		System.exit(1);
-
     }
 
-
+	// press logOut button from area manager page
     @FXML
-    void pressSignOut(ActionEvent event) throws Exception {
+    void pressLogOut(ActionEvent event) throws Exception {
     	ArrayList<String> msg = new ArrayList<>();
     	msg.add("SignOut");
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
@@ -108,7 +101,6 @@ public class AreaManagerHomePageController {
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		LoginScreensController LSC = new LoginScreensController();
     	LSC.start(primaryStage);
-
     }
 
 
@@ -132,6 +124,45 @@ public class AreaManagerHomePageController {
 		primaryStage.show();
 	}
     
+    public static void getUserData(ArrayList<String> arrFromServer){
+    	arrFromServerRet = arrFromServer;
+    }
+    
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ArrayList<String> msg1 = new ArrayList<>();
+		msg1.add("getUserDataAreaManager");
+    	try {
+			ClientUI.chat.accept(msg1);
+		} catch (IOException e) {
+			 //TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	welcomeBackLable.setText("Welcome back " + arrFromServerRet.get(1));
+    	specificAreaLable.setText(arrFromServerRet.get(4));
+	}
+    
+    @FXML
+    void pressWatchReports(ActionEvent event) throws Exception {
+    	Stage primaryStage = new Stage();
+		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		AreaManagerReportViewController amrvc = new AreaManagerReportViewController();
+		amrvc.start(primaryStage);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @FXML
     void pressApproveRequests(ActionEvent event) {
 
@@ -144,19 +175,11 @@ public class AreaManagerHomePageController {
 
 
     @FXML
-    void pressLogOut(ActionEvent event) {
-
-    }
-
-    @FXML
     void pressSetMinimummachinelevel(ActionEvent event) {
 
     }
 
-    @FXML
-    void pressWatchReports(ActionEvent event) {
 
-    }
 
 
 }
