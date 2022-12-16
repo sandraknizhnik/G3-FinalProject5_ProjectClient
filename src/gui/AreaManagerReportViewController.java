@@ -48,16 +48,16 @@ public class AreaManagerReportViewController implements Initializable {
 	private Label managmentAreaLable;
 
 	@FXML
-	private ComboBox<?> monthComboBox;
+	private ComboBox<String> monthComboBox;
 
 	@FXML
-	private ComboBox<?> numberMachineComboBox;
+	private ComboBox<String> numberMachineComboBox;
 
 	@FXML
 	private Label reportLable;
 
 	@FXML
-	private ComboBox<?> reportTypeComboBox;
+	private ComboBox<String> reportTypeComboBox;
 
 	@FXML
 	private Button showReportBtn;
@@ -72,11 +72,12 @@ public class AreaManagerReportViewController implements Initializable {
 	private Label typeLable;
 
 	@FXML
-	private ComboBox<?> yearComboBox;
+	private ComboBox<String> yearComboBox;
 
 	private double xoffset;
 	private double yoffset;
-
+	private static ArrayList<String> arrFromServerRet;
+	
 	private ObservableList<String> machineNumberList; // for numberMachineComboBox
 	private ObservableList<String> reportTypeList; // for reportTypeComboBox
 	private ObservableList<String> yearList; // for yearComboBox
@@ -103,12 +104,32 @@ public class AreaManagerReportViewController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		ArrayList<String> msg1 = new ArrayList<>();
+		msg1.add("getMachineNumber");
+    	try {
+			ClientUI.chat.accept(msg1);
+		} catch (IOException e) {
+			 //TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		machineNumberList = FXCollections.observableArrayList();
+		
+		for(int i=0; i<arrFromServerRet.size(); i++) { //copying to machineNumberList
+    		machineNumberList.add(arrFromServerRet.get(i));
+    	}
+		numberMachineComboBox.setItems(machineNumberList); //show machines number for specific area
 		reportTypeList = FXCollections.observableArrayList("Orders", "Inventory", "Customers");
+		reportTypeComboBox.setItems(reportTypeList);
 		yearList = FXCollections.observableArrayList("2022", "2021", "2020", "2019", "2018", "2017", "2016");
+		yearComboBox.setItems(yearList);
 		monthList = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
+		monthComboBox.setItems(monthList);
 	}
-
+	
+    public static void getMachineData(ArrayList<String> massageFromServer){
+    	arrFromServerRet =  massageFromServer;
+    }
+    
 	@FXML
 	void chooseMonth(ActionEvent event) {
 

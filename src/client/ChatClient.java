@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import gui.AreaManagerHomePageController;
+import gui.AreaManagerReportViewController;
 import gui.CustomerMainScreenController;
 import gui.LoginScreensController;
+import javafx.collections.ObservableList;
 import ocsf.client.AbstractClient;
 
 public class ChatClient extends AbstractClient{
@@ -46,7 +48,6 @@ public class ChatClient extends AbstractClient{
 		  awaitResponse = false;
 		  String action = massageFromServer.get(0);
 		  massageFromServer.remove(0);
-		  
 		  switch(action) {
 		  case "getUserData":
 			  CustomerMainScreenController.getUserData(massageFromServer);
@@ -60,6 +61,9 @@ public class ChatClient extends AbstractClient{
 			  break;
 		  case "userNameAndPasswordRetVal":
 			  LoginScreensController.subscriberDetails(massageFromServer);
+			  break;
+		  case "getMachineNumber":
+			  AreaManagerReportViewController.getMachineData(massageFromServer);
 			  break;
 		
 		  }
