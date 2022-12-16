@@ -10,13 +10,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class AreaManagerHomePageController {
 
-    @FXML
+    /*@FXML
     private Button ExitBtn;
 
     @FXML
@@ -26,7 +29,61 @@ public class AreaManagerHomePageController {
     private Button SignOutbtn;
 
     @FXML
-    private Button WatchReports;
+    private Button WatchReports;*/
+	 @FXML
+	 private ImageView approveRequestImg;
+
+	 @FXML
+	 private Button approveRequestsBtn;
+
+	 @FXML
+	 private ImageView ekrutLogoImage;
+
+	 @FXML
+	 private ImageView executionOrderImg;
+
+	 @FXML
+	 private Button exitBtn;
+
+	 @FXML
+	 private Label lastUpdatesLable;
+
+	 @FXML
+	 private TextArea lastUpdatesTextArea;
+
+	 @FXML
+	 private Button logOutbtn;
+
+	 @FXML
+	 private ImageView managmentAreaImage;
+
+	 @FXML
+	 private Label managmentAreaLable;
+
+	 @FXML
+	 private ImageView minLevelImage;
+
+	 @FXML
+	 private ImageView refreshImage;
+
+	 @FXML
+	 private Button sendMsgToOperationBtn;
+
+	 @FXML
+	 private Button setMinimummachinelevelBtn;
+
+	 @FXML
+	 private Label specificAreaLable;
+
+	 @FXML
+	 private ImageView watchReportImage;
+
+	 @FXML
+	 private Button watchReportsBtn;
+
+	 @FXML
+	 private Label welcomeBackLable;
+	    
     private double xoffset;
 	private double yoffset;
 
@@ -40,10 +97,6 @@ public class AreaManagerHomePageController {
 
     }
 
-    @FXML
-    void pressSetMinimummachinelevel(ActionEvent event) {
-
-    }
 
     @FXML
     void pressSignOut(ActionEvent event) throws Exception {
@@ -58,10 +111,7 @@ public class AreaManagerHomePageController {
 
     }
 
-    @FXML
-    void pressWatchReports(ActionEvent event) {
 
-    }
     public void start(Stage primaryStage) throws Exception {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/AreaManagerHomePage.fxml"));
 		
@@ -81,5 +131,32 @@ public class AreaManagerHomePageController {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+    
+    @FXML
+    void pressApproveRequests(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pressExecutionOrder(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void pressLogOut(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pressSetMinimummachinelevel(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pressWatchReports(ActionEvent event) {
+
+    }
+
 
 }
