@@ -41,7 +41,5 @@ public class ClientController extends ObservableClient implements ChatIF{
 	  {
 	    System.out.println("> " + message);
 	  }
-	 
-	
 
 }
