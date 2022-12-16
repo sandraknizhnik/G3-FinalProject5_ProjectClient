@@ -50,9 +50,13 @@ public class CustomerMainScreenController implements Initializable {
 	private static ArrayList<String> arrFromServerRet;
 
 	@FXML
-    void PressNewOrder(ActionEvent event) {
-
-    }
+    void PressNewOrder(ActionEvent event) throws Exception {
+		Stage primaryStage = new Stage();
+		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		MakingOrderScreenController mosc = new MakingOrderScreenController();
+		mosc.start(primaryStage);		
+	}
 
     @FXML
     void pressExitBTN(ActionEvent event) throws IOException {
@@ -119,6 +123,9 @@ public class CustomerMainScreenController implements Initializable {
 		}
     	WelcomeLabel.setText("Welcome back " + arrFromServerRet.get(1));
     	UserStatus.setText(arrFromServerRet.get(3));
+    	if(UserStatus.getText().equals("NotApproved")) {
+    		NewOrderBTN.setDisable(true);
+    	}
 		
 	}
 

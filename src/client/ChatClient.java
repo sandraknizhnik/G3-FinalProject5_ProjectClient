@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import gui.CustomerMainScreenController;
 import gui.LoginScreensController;
+import gui.ServiceRepresentativeAddNewCustomerController;
 import ocsf.client.AbstractClient;
 
 public class ChatClient extends AbstractClient{
@@ -57,7 +58,9 @@ public class ChatClient extends AbstractClient{
 		  case "userNameAndPasswordRetVal":
 			  LoginScreensController.subscriberDetails(massageFromServer);
 			  break;
-		
+		  case "CheckUserNameIsntExist":
+			  ServiceRepresentativeAddNewCustomerController.getInsertedNewCustomer(massageFromServer);
+			  break;
 		  }
 		  
 		 /*

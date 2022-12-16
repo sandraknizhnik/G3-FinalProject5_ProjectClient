@@ -22,7 +22,7 @@
             <Image url="@../images/regular%20logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="UserStatus" layoutX="212.0" layoutY="120.0" prefHeight="34.0" prefWidth="124.0" style="-fx-background-color: #CAC7CE;" textAlignment="JUSTIFY">
+      <Label fx:id="UserStatus" layoutX="212.0" layoutY="120.0" prefHeight="34.0" prefWidth="158.0" style="-fx-background-color: #CAC7CE;" textAlignment="JUSTIFY">
          <font>
             <Font name="Bell MT Bold" size="22.0" />
          </font>
@@ -57,24 +57,14 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="NewOrderBTN" layoutX="71.0" layoutY="221.0" mnemonicParsing="false" onAction="#PressNewOrder" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="New Order" textFill="WHITE">
+      <Button fx:id="NewOrderBTN" layoutX="71.0" layoutY="270.0" mnemonicParsing="false" onAction="#PressNewOrder" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="New Order" textFill="WHITE">
          <font>
             <Font name="Bell MT Bold" size="24.0" />
          </font>
       </Button>
-      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="260.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="260.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/5970645.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="OrderManagmantBTN" layoutX="71.0" layoutY="325.0" mnemonicParsing="false" onAction="#pressOrderManagment" prefHeight="55.0" prefWidth="211.0" style="-fx-background-color: #cfa34b;" text="Order Managment" textFill="WHITE">
-         <font>
-            <Font name="Bell MT Bold" size="20.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="259.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/1874014-200.png" />
          </image>
       </ImageView>
       <Label layoutX="71.0" layoutY="121.0" text="User Status:" textFill="#7c6e48">
