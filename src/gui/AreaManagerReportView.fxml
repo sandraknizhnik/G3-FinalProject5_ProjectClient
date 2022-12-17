@@ -12,9 +12,9 @@
    <children>
       <AnchorPane layoutY="-6.0" prefHeight="478.0" prefWidth="421.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
          <children>
-            <Label fx:id="specificAreaLable" layoutX="275.0" layoutY="88.0" prefHeight="31.0" prefWidth="128.0" textFill="#5e2525">
+            <Label fx:id="specificAreaLable" layoutX="275.0" layoutY="88.0" prefHeight="31.0" prefWidth="128.0" textFill="#7c6e48">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
             <ComboBox fx:id="yearComboBox" layoutX="95.0" layoutY="270.0" onAction="#chooseYear" prefHeight="25.0" prefWidth="85.0" promptText="Year" style="-fx-background-color: #cfcbc8;" />

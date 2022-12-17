@@ -77,12 +77,18 @@ public class AreaManagerReportViewController implements Initializable {
 	private double xoffset;
 	private double yoffset;
 	private static ArrayList<String> arrFromServerRet;
-	
+
 	private ObservableList<String> machineNumberList; // for numberMachineComboBox
 	private ObservableList<String> reportTypeList; // for reportTypeComboBox
 	private ObservableList<String> yearList; // for yearComboBox
 	private ObservableList<String> monthList; // for monthComboBox
 
+	private String selectedMachineNumber;
+	private String selectedMonth;
+	private String selectedYear;
+	private String selectedReportType;
+
+	// start window to provide movement window
 	public void start(Stage primaryStage) throws Exception {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/AreaManagerReportView.fxml"));
 
@@ -106,48 +112,51 @@ public class AreaManagerReportViewController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		ArrayList<String> msg1 = new ArrayList<>();
 		msg1.add("getMachineNumber");
-    	try {
+		try {
 			ClientUI.chat.accept(msg1);
 		} catch (IOException e) {
-			 //TODO Auto-generated catch block
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		machineNumberList = FXCollections.observableArrayList();
-		
-		for(int i=0; i<arrFromServerRet.size(); i++) { //copying to machineNumberList
-    		machineNumberList.add(arrFromServerRet.get(i));
-    	}
-		numberMachineComboBox.setItems(machineNumberList); //show machines number for specific area
+
+		for (int i = 0; i < arrFromServerRet.size() - 1; i++) { // copying to machineNumberList
+			machineNumberList.add(arrFromServerRet.get(i));
+		}
+		numberMachineComboBox.setItems(machineNumberList); // show machines number for specific area
 		reportTypeList = FXCollections.observableArrayList("Orders", "Inventory", "Customers");
 		reportTypeComboBox.setItems(reportTypeList);
 		yearList = FXCollections.observableArrayList("2022", "2021", "2020", "2019", "2018", "2017", "2016");
 		yearComboBox.setItems(yearList);
 		monthList = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
 		monthComboBox.setItems(monthList);
+		specificAreaLable.setText(arrFromServerRet.get(arrFromServerRet.size() - 1)); // show the area label
 	}
-	
-    public static void getMachineData(ArrayList<String> massageFromServer){
-    	arrFromServerRet =  massageFromServer;
-    }
-    
+
+	public static void getMachineData(ArrayList<String> massageFromServer) {
+		arrFromServerRet = massageFromServer;
+	}
+
 	@FXML
 	void chooseMonth(ActionEvent event) {
-
+		selectedMonth = monthComboBox.getSelectionModel().getSelectedItem();// get selected month in c.b
 	}
 
 	@FXML
 	void chooseNumberMachine(ActionEvent event) {
-
+		selectedMachineNumber = numberMachineComboBox.getSelectionModel().getSelectedItem();// get selected machine
+																							// number in c.b
 	}
 
 	@FXML
 	void chooseTypeReport(ActionEvent event) {
-
+		selectedReportType = reportTypeComboBox.getSelectionModel().getSelectedItem();// get selected report type
+																						// in c.b
 	}
 
 	@FXML
 	void chooseYear(ActionEvent event) {
-
+		selectedYear = yearComboBox.getSelectionModel().getSelectedItem();// get selected year in c.b
 	}
 
 	// press back button from area manager page
@@ -173,8 +182,15 @@ public class AreaManagerReportViewController implements Initializable {
 		System.exit(1);
 	}
 
+	// show next window for orders report
 	@FXML
-	void pressShowReport(ActionEvent event) {
-
+	void pressShowReport(ActionEvent event) throws Exception {
+		Stage primaryStage = new Stage();
+		((Node) event.getSource()).getScene().getWindow().hide(); // hiding primary window
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		OrderReportViewController orvc = new OrderReportViewController();
+		orvc.start(primaryStage);
 	}
+	
+	
 }

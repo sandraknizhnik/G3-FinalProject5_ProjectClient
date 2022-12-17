@@ -1,179 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screens.OrderReportViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="868.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.OrderReportViewController">
    <children>
-      <AnchorPane layoutX="1.0" prefHeight="435.0" prefWidth="590.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
+      <AnchorPane layoutX="-1.0" prefHeight="534.0" prefWidth="864.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
          <children>
-            <Label fx:id="MostWantedLabel" layoutX="42.0" layoutY="207.0" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="ProductNameMostWanted" layoutX="156.0" layoutY="185.0" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="NumberMachineLabel" layoutX="42.0" layoutY="140.0" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="95.0" layoutY="22.0" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Arial Black" size="33.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.41960784792900085" green="0.054901961237192154" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.8549019694328308" green="0.3764705955982208" blue="0.3764705955982208" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="98.0" layoutY="201.0" textFill="#5e2525">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
-            <Label layoutX="99.0" layoutY="253.0" textFill="#5e2525">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
-            <Label layoutX="135.0" layoutY="298.0" textFill="#5e2525">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="12.0" layoutY="140.0">
+            <ImageView fx:id="machineNumberImg" fitHeight="30.0" fitWidth="31.0" layoutX="12.0" layoutY="140.0">
                <image>
                   <Image url="@../images/4718735.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="12.0" layoutY="200.0">
+            <ImageView fx:id="mostPurchasedImg" fitHeight="31.0" fitWidth="31.0" layoutX="12.0" layoutY="200.0">
                <image>
                   <Image url="@../images/3649809.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="38.0" layoutX="9.0" layoutY="263.0">
+            <ImageView fx:id="canceledOrderImg" fitHeight="31.0" fitWidth="38.0" layoutX="9.0" layoutY="263.0">
                <image>
                   <Image url="@../images/7711533.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="11.0" layoutY="320.0">
+            <ImageView fx:id="ordersInTotalImg" fitHeight="31.0" fitWidth="31.0" layoutX="11.0" layoutY="320.0">
                <image>
                   <Image url="@../images/7293583.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="-1.0" layoutY="396.0" prefHeight="39.0" prefWidth="640.0" style="-fx-background-color: #343c34;">
+            <ImageView fx:id="managmentAreaImg" fitHeight="30.0" fitWidth="31.0" layoutX="12.0" layoutY="82.0">
+               <image>
+                  <Image url="@../images/9148306.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="-6.0" layoutY="499.0" prefHeight="42.0" prefWidth="879.0" style="-fx-background-color: #343c34;">
                <children>
-                  <Button fx:id="SignOutbtn11" layoutX="5.0" layoutY="3.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #f2e9c0;" text="Back" textFill="#343c34">
+                  <Button fx:id="backBtn" layoutX="22.0" layoutY="6.0" mnemonicParsing="false" onAction="#pressBackBtn" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #f2e9c0;" text="Back" textFill="#343c34">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="46.0" fitWidth="85.0" layoutX="277.0" layoutY="-9.0">
+                  <ImageView fx:id="ekrutLogoImage" fitHeight="46.0" fitWidth="85.0" layoutX="371.0" layoutY="-4.0">
                      <image>
                         <Image url="@../images/COPYRIGHTS.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <TextField layoutX="226.0" layoutY="82.0" prefHeight="33.0" prefWidth="104.0" text="North">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="52.0" layoutY="84.0" text="Managment area" textFill="#7c6e48">
+            <Label fx:id="specificAreaLable" layoutX="223.0" layoutY="84.0" prefHeight="27.0" prefWidth="134.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="12.0" layoutY="82.0">
-               <image>
-                  <Image url="@../images/9148306.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="52.0" layoutY="143.0" text="Machine number: " textFill="#7c6e48">
+            <Label fx:id="managmentAreaLable" layoutX="52.0" layoutY="84.0" text="Managment area:" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <TextField layoutX="226.0" layoutY="144.0" prefHeight="33.0" prefWidth="103.0" text="2">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="226.0" layoutY="204.0" prefHeight="33.0" prefWidth="104.0" text="Bisli">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="52.0" layoutY="206.0" text="Most purchased" textFill="#7c6e48">
+            <Label fx:id="machineNumberLable" layoutX="52.0" layoutY="143.0" text="Machine number:" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="52.0" layoutY="265.0" text="Canceled orders" textFill="#7c6e48">
+            <Label fx:id="specificMachineNumberLable" layoutX="223.0" layoutY="143.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <TextField layoutX="226.0" layoutY="263.0" prefHeight="33.0" prefWidth="103.0" text="5">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="52.0" layoutY="323.0" text="Orders in total" textFill="#7c6e48">
+            <Label fx:id="specificMostPurchasedLable" layoutX="214.0" layoutY="206.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <TextField layoutX="226.0" layoutY="322.0" prefHeight="33.0" prefWidth="103.0" text="50">
+            <Label fx:id="MostPurchasedLable" layoutX="52.0" layoutY="206.0" text="Most purchased:" textFill="#7c6e48">
                <font>
-                  <Font name="Bell MT" size="16.0" />
+                  <Font name="Bell MT Bold" size="22.0" />
                </font>
-            </TextField>
-            <AnchorPane layoutX="-1.0" prefHeight="46.0" prefWidth="640.0" style="-fx-background-color: #383c34;">
+            </Label>
+            <Label fx:id="CanceledOrdersLable" layoutX="52.0" layoutY="265.0" text="Canceled orders:" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="specificCanceledOrdesLabel" layoutX="214.0" layoutY="265.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="OrdersInTotalLable" layoutX="52.0" layoutY="323.0" text="Orders in total:" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="specificOrdersInTotalLable" layoutX="214.0" layoutY="322.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="-1.0" prefHeight="46.0" prefWidth="873.0" style="-fx-background-color: #383c34;">
                <children>
-                  <Button layoutX="599.0" layoutY="7.0" mnemonicParsing="false" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+                  <Button fx:id="exitBtn" layoutX="825.0" layoutY="8.0" mnemonicParsing="false" onAction="#pressExitBtn" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Label layoutX="190.0" layoutY="3.0" prefHeight="40.0" prefWidth="260.0" text="Order Report" textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
+                  <Label fx:id="OrderReportLabel" layoutX="305.0" layoutY="3.0" prefHeight="40.0" prefWidth="260.0" text="Order Report" textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
                      <font>
                         <Font name="Broadway" size="33.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="236.0" fitWidth="334.0" layoutX="304.0" layoutY="103.0">
-               <image>
-                  <Image url="@../images/NEWPIE.png" />
-               </image>
-            </ImageView>
+            <PieChart fx:id="pieChartOrder" layoutX="345.0" layoutY="63.0" prefHeight="418.0" prefWidth="514.0" />
          </children>
       </AnchorPane>
    </children>

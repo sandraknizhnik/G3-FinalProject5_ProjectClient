@@ -142,6 +142,7 @@ public class AreaManagerHomePageController implements Initializable{
     	specificAreaLable.setText(arrFromServerRet.get(4));
 	}
     
+	//show next window for choosing reports
     @FXML
     void pressWatchReports(ActionEvent event) throws Exception {
     	Stage primaryStage = new Stage();
