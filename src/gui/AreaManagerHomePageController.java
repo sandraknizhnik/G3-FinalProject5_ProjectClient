@@ -139,7 +139,7 @@ public class AreaManagerHomePageController implements Initializable{
 			e.printStackTrace();
 		}
     	welcomeBackLable.setText("Welcome back " + arrFromServerRet.get(1));
-    	specificAreaLable.setText(arrFromServerRet.get(4));
+    	specificAreaLable.setText(arrFromServerRet.get(3));
 	}
     
 	//show next window for choosing reports
@@ -150,6 +150,7 @@ public class AreaManagerHomePageController implements Initializable{
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		AreaManagerReportViewController amrvc = new AreaManagerReportViewController();
 		amrvc.start(primaryStage);
+		
     }
     
     
