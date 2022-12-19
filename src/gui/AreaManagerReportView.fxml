@@ -52,14 +52,14 @@
                   <Image url="@../images/4718735.png" />
                </image>
             </ImageView>
-            <Button fx:id="showReportBtn" layoutX="143.0" layoutY="344.0" mnemonicParsing="false" onAction="#pressShowReport" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #cfa34b;" text="Show Report" textFill="WHITE">
+            <Button fx:id="showReportBtn" layoutX="142.0" layoutY="320.0" mnemonicParsing="false" onAction="#pressShowReport" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #cfa34b;" text="Show Report" textFill="WHITE">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font>
             </Button>
             <ComboBox fx:id="reportTypeComboBox" layoutX="163.0" layoutY="209.0" onAction="#chooseTypeReport" prefHeight="25.0" prefWidth="111.0" promptText="Report type" style="-fx-background-color: #cfcbc8;" />
             <ComboBox fx:id="numberMachineComboBox" layoutX="276.0" layoutY="153.0" onAction="#chooseNumberMachine" prefHeight="25.0" prefWidth="111.0" promptText="No. Machine" style="-fx-background-color: #cfcbc8;" />
-            <Label fx:id="managmentAreaLable" layoutX="96.0" layoutY="90.0" text="Managment area" textFill="#7c6e48">
+            <Label fx:id="managmentAreaLable" layoutX="96.0" layoutY="90.0" text="Managment area:" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
@@ -84,6 +84,11 @@
                   <Image url="@../images/8997774.png" />
                </image>
             </ImageView>
+            <Label fx:id="errorReportDataLable" layoutX="52.0" layoutY="375.0" prefHeight="50.0" prefWidth="330.0" textAlignment="CENTER" textFill="#ee0404">
+               <font>
+                  <Font name="Bell MT Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <ImageView fx:id="managmentAreaImage" fitHeight="30.0" fitWidth="31.0" layoutX="46.0" layoutY="81.0">

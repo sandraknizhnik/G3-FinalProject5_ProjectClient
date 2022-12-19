@@ -70,7 +70,7 @@
                   <Image url="@../images/executionOrderImg.png" />
                </image>
             </ImageView>
-            <Label fx:id="managmentAreaLable" layoutX="72.0" layoutY="90.0" prefHeight="27.0" prefWidth="164.0" text="Managment area" textFill="#7c6e48">
+            <Label fx:id="managmentAreaLable" layoutX="72.0" layoutY="90.0" prefHeight="27.0" prefWidth="173.0" text="Managment area:" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>

@@ -73,11 +73,14 @@ public class AreaManagerReportViewController implements Initializable {
 
 	@FXML
 	private ComboBox<String> yearComboBox;
+	
+	@FXML
+	private Label errorReportDataLable;
 
 	private double xoffset;
 	private double yoffset;
 	private static ArrayList<String> arrFromServerRet;
-
+	private static ArrayList<String> arrReportData;
 	private ObservableList<String> machineNumberList; // for numberMachineComboBox
 	private ObservableList<String> reportTypeList; // for reportTypeComboBox
 	private ObservableList<String> yearList; // for yearComboBox
@@ -158,6 +161,8 @@ public class AreaManagerReportViewController implements Initializable {
 	void chooseYear(ActionEvent event) {
 		selectedYear = yearComboBox.getSelectionModel().getSelectedItem();// get selected year in c.b
 	}
+	
+	
 
 	// press back button from area manager page
 	@FXML
@@ -185,11 +190,37 @@ public class AreaManagerReportViewController implements Initializable {
 	// show next window for orders report
 	@FXML
 	void pressShowReport(ActionEvent event) throws Exception {
-		Stage primaryStage = new Stage();
+		/*Stage primaryStage = new Stage();
 		((Node) event.getSource()).getScene().getWindow().hide(); // hiding primary window
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		OrderReportViewController orvc = new OrderReportViewController();
-		orvc.start(primaryStage);
+		orvc.start(primaryStage);*/
+		if(checkValidReportData()) {
+			ArrayList<String> msg = new ArrayList<>();
+			msg.add("getOrderReportDetails");
+			msg.add(selectedMachineNumber);
+			msg.add(selectedMonth);
+			msg.add(selectedYear);
+			//msg.add(selectedReportType);
+			ClientUI.chat.accept(msg);
+			if(arrReportData.get(0).equals("Error"))
+			{
+				errorReportDataLable.setText("\t\t\t\tNo such report");		
+			}
+		}	
+	}
+	
+	
+	boolean checkValidReportData() {
+		if ((selectedMachineNumber==null)||(selectedMonth==null)||(selectedYear==null)||(selectedReportType==null)){
+			errorReportDataLable.setText("Inorder to view report you must choose year\n month, machine number and report type");
+			return false;
+		}
+		return true;
+	}
+
+	public static void getOrderReportData(ArrayList<String> massageFromServer) {
+		arrReportData = massageFromServer;	
 	}
 	
 	
