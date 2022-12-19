@@ -23,7 +23,6 @@ public class LoginScreensController {
 	@FXML
     private Button exitBTN;
 
-	
 	@FXML
     private Label ErrorUserPass;
 
