@@ -42,8 +42,6 @@ public class CustomerMainScreenController implements Initializable {
 
     @FXML
     private Label UserStatus;
-    @FXML
-    private Button pickUpOrderBTN;
 
     @FXML
     private Button exitBTN;
@@ -56,8 +54,8 @@ public class CustomerMainScreenController implements Initializable {
 		Stage primaryStage = new Stage();
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		primaryStage.initStyle(StageStyle.UNDECORATED);
-		EKrutFinalMarketController efmc = new EKrutFinalMarketController();
-		efmc.start(primaryStage);		
+		MakingOrderScreenController mosc = new MakingOrderScreenController();
+		mosc.start(primaryStage);		
 	}
 
     @FXML
@@ -68,14 +66,12 @@ public class CustomerMainScreenController implements Initializable {
 		ClientUI.chat.accept(msg);
 		System.exit(1);
     }
-    @FXML
-    void PresspickUpOrderBTN(ActionEvent event) {
-
-    }
+    
     
 
     @FXML
     void pressOrderManagment(ActionEvent event) {
+    	
     }
 
     @FXML
@@ -119,7 +115,7 @@ public class CustomerMainScreenController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ArrayList<String> msg1 = new ArrayList<>();
-		msg1.add("getUserDataCustomer");
+		msg1.add("getUserData");
     	try {
 			ClientUI.chat.accept(msg1);
 		} catch (IOException e) {
