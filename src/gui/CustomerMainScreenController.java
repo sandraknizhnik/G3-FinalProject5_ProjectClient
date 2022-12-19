@@ -42,6 +42,8 @@ public class CustomerMainScreenController implements Initializable {
 
     @FXML
     private Label UserStatus;
+    @FXML
+    private Button pickUpOrderBTN;
 
     @FXML
     private Button exitBTN;
@@ -66,7 +68,10 @@ public class CustomerMainScreenController implements Initializable {
 		ClientUI.chat.accept(msg);
 		System.exit(1);
     }
-    
+    @FXML
+    void PresspickUpOrderBTN(ActionEvent event) {
+
+    }
     
 
     @FXML
