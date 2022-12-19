@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import gui.CustomerMainScreenController;
 import gui.LoginScreensController;
 import gui.ServiceRepresentativeAddNewCustomerController;
+import gui.ServiceRepresentativeHomePageController;
 import ocsf.client.AbstractClient;
 
 public class ChatClient extends AbstractClient{
@@ -48,8 +49,11 @@ public class ChatClient extends AbstractClient{
 		  massageFromServer.remove(0);
 		  
 		  switch(action) {
-		  case "getUserData":
+		  case "getUserDataCustomer":
 			  CustomerMainScreenController.getUserData(massageFromServer);
+			  break;
+		  case "getUserDataServiceRep":
+			  ServiceRepresentativeHomePageController.getUserData(massageFromServer);
 			  break;
 		  case "quit":
 			  massageFromServer.clear();

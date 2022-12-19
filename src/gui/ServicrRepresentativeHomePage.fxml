@@ -52,7 +52,7 @@
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Label fx:id="NameOfUserLabel" layoutX="97.0" layoutY="1.0" prefHeight="40.0" prefWidth="397.0" text="Welcome back Dor!  " textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
+                  <Label fx:id="NameOfUserLabel" layoutX="84.0" layoutY="1.0" prefHeight="40.0" prefWidth="436.0" text="Welcome back Dor!  " textAlignment="CENTER" textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
                      <font>
                         <Font name="Broadway" size="33.0" />
                      </font>

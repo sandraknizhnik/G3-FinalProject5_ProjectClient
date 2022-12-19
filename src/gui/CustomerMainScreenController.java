@@ -54,8 +54,8 @@ public class CustomerMainScreenController implements Initializable {
 		Stage primaryStage = new Stage();
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		primaryStage.initStyle(StageStyle.UNDECORATED);
-		MakingOrderScreenController mosc = new MakingOrderScreenController();
-		mosc.start(primaryStage);		
+		EKrutFinalMarketController efmc = new EKrutFinalMarketController();
+		efmc.start(primaryStage);		
 	}
 
     @FXML
@@ -114,7 +114,7 @@ public class CustomerMainScreenController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ArrayList<String> msg1 = new ArrayList<>();
-		msg1.add("getUserData");
+		msg1.add("getUserDataCustomer");
     	try {
 			ClientUI.chat.accept(msg1);
 		} catch (IOException e) {

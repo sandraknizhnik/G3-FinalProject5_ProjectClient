@@ -1,12 +1,15 @@
 package gui;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import client.ClientUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,7 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ServiceRepresentativeHomePageController {
+public class ServiceRepresentativeHomePageController implements Initializable  {
 
     @FXML
     private Button AddNewCustomer;
@@ -30,6 +33,7 @@ public class ServiceRepresentativeHomePageController {
     private Button SignOutbtn;
     private double xoffset;
 	private double yoffset;
+	private static ArrayList<String> arrFromServerRet;
 
     @FXML
     void pressAddNewCustomer(ActionEvent event) throws Exception {
@@ -81,6 +85,29 @@ public class ServiceRepresentativeHomePageController {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
+	}
+ 
+ 
+ 	public static void getUserData(ArrayList<String> arrFromServer){
+ 		arrFromServerRet = arrFromServer;
+ 	}
+ 	
+ 
+ 	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ArrayList<String> msg1 = new ArrayList<>();
+		msg1.add("getUserDataServiceRep");
+ 	try {
+			ClientUI.chat.accept(msg1);
+		} catch (IOException e) {
+			 //TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+ 		NameOfUserLabel.setText("Welcome back " + arrFromServerRet.get(0));
+ 		
+ 		
+		
 	}
 
 
