@@ -51,7 +51,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label fx:id="specificAreaLable" layoutX="223.0" layoutY="84.0" prefHeight="27.0" prefWidth="134.0" textFill="#7c6e48">
+            <Label fx:id="specificAreaLable" layoutX="238.0" layoutY="84.0" prefHeight="27.0" prefWidth="134.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
@@ -66,12 +66,12 @@
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="specificMachineNumberLable" layoutX="223.0" layoutY="143.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+            <Label fx:id="specificMachineNumberLable" layoutX="238.0" layoutY="143.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="specificMostPurchasedLable" layoutX="214.0" layoutY="206.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+            <Label fx:id="specificMostPurchasedLable" layoutX="238.0" layoutY="206.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
@@ -86,7 +86,7 @@
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="specificCanceledOrdesLabel" layoutX="214.0" layoutY="265.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+            <Label fx:id="specificCanceledOrdesLabel" layoutX="238.0" layoutY="265.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
@@ -96,7 +96,7 @@
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="specificOrdersInTotalLable" layoutX="214.0" layoutY="322.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+            <Label fx:id="specificOrdersInTotalLable" layoutX="238.0" layoutY="322.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>

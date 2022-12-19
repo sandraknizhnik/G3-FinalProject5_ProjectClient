@@ -190,11 +190,6 @@ public class AreaManagerReportViewController implements Initializable {
 	// show next window for orders report
 	@FXML
 	void pressShowReport(ActionEvent event) throws Exception {
-		/*Stage primaryStage = new Stage();
-		((Node) event.getSource()).getScene().getWindow().hide(); // hiding primary window
-		primaryStage.initStyle(StageStyle.UNDECORATED);
-		OrderReportViewController orvc = new OrderReportViewController();
-		orvc.start(primaryStage);*/
 		if(checkValidReportData()) {
 			ArrayList<String> msg = new ArrayList<>();
 			msg.add("getOrderReportDetails");
@@ -207,7 +202,15 @@ public class AreaManagerReportViewController implements Initializable {
 			{
 				errorReportDataLable.setText("\t\t\t\tNo such report");		
 			}
-		}	
+			else { //showing report view if the user put current details
+				Stage primaryStage = new Stage();
+				((Node) event.getSource()).getScene().getWindow().hide(); // hiding primary window
+				primaryStage.initStyle(StageStyle.UNDECORATED);
+				OrderReportViewController orvc = new OrderReportViewController();
+				OrderReportViewController.getOrderReportDetails(arrReportData);
+				orvc.start(primaryStage);
+			}
+		}
 	}
 	
 	

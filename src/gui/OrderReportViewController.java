@@ -1,12 +1,16 @@
 package gui;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import client.ClientUI;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
@@ -17,7 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class OrderReportViewController {
+public class OrderReportViewController implements Initializable{
 
     @FXML
     private Label CanceledOrdersLable;
@@ -82,10 +86,15 @@ public class OrderReportViewController {
 	private double xoffset;
 	private double yoffset;
 	
+	private static ArrayList<String> arrReportData;
+	
+	/*public OrderReportViewController(ArrayList<String> arrReportData2) {
+		arrReportData = arrReportData2;
+	}*/
+
 	//start window to provide movement window
     public void start(Stage primaryStage) throws Exception {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/OrderReportView.fxml"));
-
 		// event handler for when the mouse is pressed AND dragged to move the window
 		root.setOnMousePressed(event1 -> {
 			xoffset = event1.getSceneX();
@@ -123,6 +132,58 @@ public class OrderReportViewController {
 		((Node) event.getSource()).getScene().getWindow().hide(); // hiding primary window
 		ClientUI.chat.accept(msg);
 		System.exit(1);
+	}
+	
+	public static void getOrderReportDetails(ArrayList<String> massageFromServer) {
+		arrReportData = massageFromServer;
+		/*System.out.println("blablablba3 "  + arrReportData);
+		int size = arrReportData.size();
+		System.out.println(size);
+		
+		System.out.println(arrReportData.get(5).getClass());
+		String str = arrReportData.get(5);
+		System.out.println(str);
+		specificAreaLable.setText(str); */
+		/*;*/
+		/*for(int i=size-1; i>=0; i--) {
+			
+		}*/
+
+		
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		specificAreaLable.setText(arrReportData.get(arrReportData.size()-1));
+		specificMachineNumberLable.setText(arrReportData.get(arrReportData.size()-2));
+		specificMostPurchasedLable.setText(arrReportData.get(arrReportData.size()-3));
+		specificCanceledOrdesLabel.setText(arrReportData.get(arrReportData.size()-4));
+		specificOrdersInTotalLable.setText(arrReportData.get(arrReportData.size()-5));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*machineNumberList = FXCollections.observableArrayList();
+
+		for (int i = 0; i < arrFromServerRet.size() - 1; i++) { // copying to machineNumberList
+			machineNumberList.add(arrFromServerRet.get(i));
+		}
+		numberMachineComboBox.setItems(machineNumberList); // show machines number for specific area
+		reportTypeList = FXCollections.observableArrayList("Orders", "Inventory", "Customers");
+		reportTypeComboBox.setItems(reportTypeList);
+		yearList = FXCollections.observableArrayList("2022", "2021", "2020", "2019", "2018", "2017", "2016");
+		yearComboBox.setItems(yearList);
+		monthList = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
+		monthComboBox.setItems(monthList);
+		specificAreaLable.setText(arrFromServerRet.get(arrFromServerRet.size() - 1)); // show the area label*/
 	}
 
 }
