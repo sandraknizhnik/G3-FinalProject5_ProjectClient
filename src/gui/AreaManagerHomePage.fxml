@@ -118,7 +118,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button fx:id="setMinimummachinelevelBtn" layoutX="72.0" layoutY="341.0" mnemonicParsing="false" onAction="#pressSetMinimummachinelevel" prefHeight="40.0" prefWidth="275.0" style="-fx-background-color: #cfa34b;" text="Set minimum machine level" textFill="WHITE">
+            <Button fx:id="setMinimummachinelevelBtn" layoutX="72.0" layoutY="341.0" mnemonicParsing="false" onAction="#pressSetMinimummachinelevel" prefHeight="40.0" prefWidth="247.0" style="-fx-background-color: #cfa34b;" text="Set minimum machine level" textFill="WHITE">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font>

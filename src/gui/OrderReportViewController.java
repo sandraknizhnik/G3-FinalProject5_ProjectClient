@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import client.ClientUI;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -136,20 +137,6 @@ public class OrderReportViewController implements Initializable{
 	
 	public static void getOrderReportDetails(ArrayList<String> massageFromServer) {
 		arrReportData = massageFromServer;
-		/*System.out.println("blablablba3 "  + arrReportData);
-		int size = arrReportData.size();
-		System.out.println(size);
-		
-		System.out.println(arrReportData.get(5).getClass());
-		String str = arrReportData.get(5);
-		System.out.println(str);
-		specificAreaLable.setText(str); */
-		/*;*/
-		/*for(int i=size-1; i>=0; i--) {
-			
-		}*/
-
-		
 	}
 	
 	@Override
@@ -159,31 +146,14 @@ public class OrderReportViewController implements Initializable{
 		specificMostPurchasedLable.setText(arrReportData.get(arrReportData.size()-3));
 		specificCanceledOrdesLabel.setText(arrReportData.get(arrReportData.size()-4));
 		specificOrdersInTotalLable.setText(arrReportData.get(arrReportData.size()-5));
+			
+		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Bisli", 2));
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*machineNumberList = FXCollections.observableArrayList();
-
-		for (int i = 0; i < arrFromServerRet.size() - 1; i++) { // copying to machineNumberList
-			machineNumberList.add(arrFromServerRet.get(i));
+		String str = arrReportData.get(arrReportData.size()-6);
+		String[] arrOfItems = str.split(",");
+		for(int i=0; i<arrOfItems.length-1; i+=2) {
+			pieChartData.add(new PieChart.Data(arrOfItems[i], Double.parseDouble(arrOfItems[i+1])));
 		}
-		numberMachineComboBox.setItems(machineNumberList); // show machines number for specific area
-		reportTypeList = FXCollections.observableArrayList("Orders", "Inventory", "Customers");
-		reportTypeComboBox.setItems(reportTypeList);
-		yearList = FXCollections.observableArrayList("2022", "2021", "2020", "2019", "2018", "2017", "2016");
-		yearComboBox.setItems(yearList);
-		monthList = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
-		monthComboBox.setItems(monthList);
-		specificAreaLable.setText(arrFromServerRet.get(arrFromServerRet.size() - 1)); // show the area label*/
+		pieChartOrder.setData(pieChartData);	
 	}
-
 }

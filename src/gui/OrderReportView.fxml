@@ -71,7 +71,7 @@
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="specificMostPurchasedLable" layoutX="238.0" layoutY="206.0" prefHeight="27.0" prefWidth="103.0" textFill="#7c6e48">
+            <Label fx:id="specificMostPurchasedLable" layoutX="238.0" layoutY="206.0" prefHeight="27.0" prefWidth="149.0" textFill="#7c6e48">
                <font>
                   <Font name="Bell MT Bold" size="22.0" />
                </font>
@@ -115,7 +115,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <PieChart fx:id="pieChartOrder" layoutX="345.0" layoutY="63.0" prefHeight="418.0" prefWidth="514.0" />
+            <PieChart fx:id="pieChartOrder" layoutX="388.0" layoutY="69.0" prefHeight="418.0" prefWidth="474.0" />
          </children>
       </AnchorPane>
    </children>
