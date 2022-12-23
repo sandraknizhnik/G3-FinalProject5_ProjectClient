@@ -192,7 +192,17 @@ public class AreaManagerReportViewController implements Initializable {
 	void pressShowReport(ActionEvent event) throws Exception {
 		if(checkValidReportData()) {
 			ArrayList<String> msg = new ArrayList<>();
-			msg.add("getOrderReportDetails");
+			switch(selectedReportType) {
+				case "Orders":
+					msg.add("getOrderReportDetails");
+					break;
+				case "Customers":
+					msg.add("getCustomersReportDetails");
+					break;
+				case "Inventory":
+					msg.add("getInventoryReportDetails");
+					break;
+			}
 			msg.add(selectedMachineNumber);
 			msg.add(selectedMonth);
 			msg.add(selectedYear);
