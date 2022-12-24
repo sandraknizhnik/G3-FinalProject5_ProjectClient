@@ -48,7 +48,9 @@ public class ChatClient extends AbstractClient{
 		  ArrayList<String> massageFromServer =(ArrayList<String>) msg;
 		  awaitResponse = false;
 		  String action = massageFromServer.get(0);
+		  System.out.println("msg here "+ msg);
 		  massageFromServer.remove(0);
+		  
 		  switch(action) {
 		  case "getUserData":
 			  CustomerMainScreenController.getUserData(massageFromServer);
@@ -77,6 +79,9 @@ public class ChatClient extends AbstractClient{
 			  break;
 		  case "getInventoryReportDetails":
 			  AreaManagerReportViewController.getInventoryReportData(massageFromServer);
+			  break;
+		  case "getMinimumLevelMachineDetails":
+			  SetMinimumLevelController.getMachineUpdateMinimumLevelData(massageFromServer);
 			  break;
 		
 		

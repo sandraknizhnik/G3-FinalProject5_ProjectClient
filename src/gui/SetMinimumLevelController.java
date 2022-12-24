@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -74,6 +75,7 @@ public class SetMinimumLevelController implements Initializable{
 	private double xoffset;
 	private double yoffset;
 	private static ArrayList<String> arrFromServerRet;
+	private static ArrayList<String> arrMachineUpdateLevel;
 	private String selectedMachineNumber;
 	private ObservableList<String> machineNumberList; // for numberMachineComboBox
 	
@@ -151,9 +153,49 @@ public class SetMinimumLevelController implements Initializable{
 
     @FXML
     void pressUpdate(ActionEvent event) {
-		if ((selectedMachineNumber==null)||(specificMinLevelText.getText().trim().isEmpty())){
-			errorDataLable.setText("Inorder to set minimum level you must choose\n machine number and enter minimum level");
+		if (checkValidInsertData()){
+			ArrayList<String> msg1 = new ArrayList<>();
+			msg1.add("setMinimumLevelMachineDetails");
+			msg1.add(selectedMachineNumber);
+			msg1.add(specificMinLevelText.getText().trim());
+			System.out.println("blabla1 "+ msg1);
+			try {
+				ClientUI.chat.accept(msg1);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("array "+arrMachineUpdateLevel);
+			if(arrMachineUpdateLevel.get(0).equals("Success!")) {
+				errorDataLable.setTextFill(Color.GREEN);
+				errorDataLable.setText("\t\t\tUpdate Successful!");			
+			}
+			else {
+				errorDataLable.setText("\t\t\tUpdate Failed!");	
+			}
 		}
     }
+    
+    private boolean checkValidInsertData() {
+    	if ((selectedMachineNumber==null)||(specificMinLevelText.getText().trim().isEmpty())){
+			errorDataLable.setText("Inorder to set minimum level you must choose\n machine number and enter minimum level");
+		}
+    	else {
+    		int intValue;
+    		try {
+    		    intValue = Integer.parseInt(specificMinLevelText.getText().trim());
+    		    return true;
+    		} catch (NumberFormatException e) {
+    			errorDataLable.setText("\t\tEnter only integer number!");
+    		    return false;
+    		}
+    	}
+    	return false;	
+    }
+
+	public static void getMachineUpdateMinimumLevelData(ArrayList<String> massageFromServer) {
+		arrMachineUpdateLevel = massageFromServer;
+		
+	}
 }
 
