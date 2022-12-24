@@ -153,6 +153,27 @@ public class AreaManagerHomePageController implements Initializable{
 		
     }
     
+    //show next window for setting minimum level
+    @FXML
+    void pressSetMinimummachinelevel(ActionEvent event) throws Exception {
+    	Stage primaryStage = new Stage();
+		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		SetMinimumLevelController smlc = new SetMinimumLevelController();
+		smlc.start(primaryStage);
+    }  
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -176,10 +197,7 @@ public class AreaManagerHomePageController implements Initializable{
     }
 
 
-    @FXML
-    void pressSetMinimummachinelevel(ActionEvent event) {
 
-    }
 
 
 

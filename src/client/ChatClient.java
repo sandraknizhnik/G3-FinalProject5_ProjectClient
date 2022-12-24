@@ -7,6 +7,7 @@ import gui.AreaManagerHomePageController;
 import gui.AreaManagerReportViewController;
 import gui.CustomerMainScreenController;
 import gui.LoginScreensController;
+import gui.SetMinimumLevelController;
 import javafx.collections.ObservableList;
 import ocsf.client.AbstractClient;
 
@@ -65,11 +66,17 @@ public class ChatClient extends AbstractClient{
 		  case "getMachineNumber":
 			  AreaManagerReportViewController.getMachineData(massageFromServer);
 			  break;
+		  case "getMachineNumberForSetMinimum":
+			  SetMinimumLevelController.getMachineDataMinimumLevel(massageFromServer);
+			  break;
 		  case "getOrderReportDetails":
 			  AreaManagerReportViewController.getOrderReportData(massageFromServer);
 			  break;
 		  case "getCustomersReportDetails":
 			  AreaManagerReportViewController.getCustomersReportData(massageFromServer);
+			  break;
+		  case "getInventoryReportDetails":
+			  AreaManagerReportViewController.getInventoryReportData(massageFromServer);
 			  break;
 		
 		

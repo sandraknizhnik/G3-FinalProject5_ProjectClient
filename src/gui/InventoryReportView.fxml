@@ -1,114 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager_CEO_ViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="868.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InventoryReportViewController">
    <children>
-      <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="458.0" prefWidth="453.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
+      <AnchorPane layoutX="-1.0" prefHeight="534.0" prefWidth="864.0" style="-fx-background-color: #f8f4ec; -fx-background-color: ;">
          <children>
-            <Label layoutX="30.0" layoutY="23.0" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="Arial Black" size="33.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.41960784792900085" green="0.054901961237192154" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.8549019694328308" green="0.3764705955982208" blue="0.3764705955982208" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="387.0" layoutY="91.0" textFill="#5e2525">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
-            <TextArea layoutX="265.0" layoutY="188.0" prefHeight="200.0" prefWidth="164.0" text="1. Repository has been &#10;updated for machine&#10;number 5">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font></TextArea>
-            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="31.0" layoutY="153.0">
+            <ImageView fx:id="machineNumberImg" fitHeight="30.0" fitWidth="31.0" layoutX="14.0" layoutY="204.0">
                <image>
-                  <Image url="@../images/2328966.png" />
+                  <Image url="@../images/4718735.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="416.0" layoutY="169.0">
-               <image>
-                  <Image url="@../images/9053401.png" />
-               </image>
-            </ImageView>
-            <TextField layoutX="265.0" layoutY="90.0" prefHeight="34.0" prefWidth="162.0" text="North">
-               <font>
-                  <Font name="Bell MT" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="72.0" layoutY="90.0" text="Managment area" textFill="#7c6e48">
-               <font>
-                  <Font name="Bell MT Bold" size="22.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="31.0" layoutY="88.0">
+            <ImageView fx:id="managmentAreaImg" fitHeight="30.0" fitWidth="31.0" layoutX="14.0" layoutY="130.0">
                <image>
                   <Image url="@../images/9148306.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="1.0" layoutY="5.0" prefHeight="46.0" prefWidth="483.0" style="-fx-background-color: #383c34;">
+            <AnchorPane layoutX="-6.0" layoutY="499.0" prefHeight="42.0" prefWidth="879.0" style="-fx-background-color: #343c34;">
                <children>
-                  <Button layoutX="445.0" layoutY="7.0" mnemonicParsing="false" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+                  <Button fx:id="backBtn" layoutX="22.0" layoutY="6.0" mnemonicParsing="false" onAction="#pressBackBtn" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #f2e9c0;" text="Back" textFill="#343c34">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Label layoutX="71.0" layoutY="3.0" prefHeight="40.0" prefWidth="363.0" text="Welcome back Dor!  " textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
-                     <font>
-                        <Font name="Broadway" size="33.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <Label layoutX="265.0" layoutY="153.0" text="Latest updates" textFill="#7c6e48">
-               <font>
-                  <Font name="Bell MT Bold" size="22.0" />
-               </font>
-            </Label>
-            <AnchorPane layoutX="8.0" layoutY="419.0" prefHeight="39.0" prefWidth="476.0" style="-fx-background-color: #343c34;">
-               <children>
-                  <Button fx:id="SignOutbtn111" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="16.0" prefWidth="86.0" style="-fx-background-color: #f2e9c0;" text="Log Out" textFill="#343c34">
-                     <font>
-                        <Font name="Bell MT Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <ImageView fitHeight="50.0" fitWidth="85.0" layoutX="196.0" layoutY="-6.0">
+                  <ImageView fx:id="ekrutLogoImage" fitHeight="46.0" fitWidth="57.0" layoutX="399.0" layoutY="-4.0">
                      <image>
                         <Image url="@../images/COPYRIGHTS.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <Button fx:id="SignOutbtn112" layoutX="73.0" layoutY="148.0" mnemonicParsing="false" onAction="#pressSignOut" prefHeight="40.0" prefWidth="171.0" style="-fx-background-color: #cfa34b;" text="Watch Reports" textFill="WHITE">
+            <Label fx:id="specificAreaLable" layoutX="230.0" layoutY="132.0" prefHeight="27.0" prefWidth="105.0" textFill="#7c6e48">
                <font>
-                  <Font name="Bell MT Bold" size="18.0" />
+                  <Font name="Bell MT Bold" size="22.0" />
                </font>
-            </Button>
+            </Label>
+            <Label fx:id="managmentAreaLable" layoutX="54.0" layoutY="132.0" text="Managment area:" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="machineNumberLable" layoutX="54.0" layoutY="207.0" text="Machine number:" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="specificMachineNumberLable" layoutX="230.0" layoutY="207.0" prefHeight="27.0" prefWidth="49.0" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="-1.0" prefHeight="46.0" prefWidth="873.0" style="-fx-background-color: #383c34;">
+               <children>
+                  <Button fx:id="exitBtn" layoutX="825.0" layoutY="8.0" mnemonicParsing="false" onAction="#pressExitBtn" prefWidth="26.0" style="-fx-background-color: #f2e9c0;" text="X" textFill="#343c34">
+                     <font>
+                        <Font name="Bell MT Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="inventoryReportLabel" layoutX="279.0" layoutY="3.0" prefHeight="40.0" prefWidth="434.0" text="Inventory Report" textFill="#b28f47" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Broadway" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackedBarChart fx:id="stackedBarChart" layoutX="339.0" layoutY="70.0" prefHeight="401.0" prefWidth="520.0">
+              <xAxis>
+                <CategoryAxis fx:id="namesOfItems" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="rangeOfQuantity" side="LEFT" />
+              </yAxis>
+            </StackedBarChart>
+            <ImageView fx:id="totalAmountImg" fitHeight="30.0" fitWidth="31.0" layoutX="14.0" layoutY="287.0">
+               <image>
+                  <Image url="@../images/1942650.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="totalLackImg" fitHeight="30.0" fitWidth="31.0" layoutX="14.0" layoutY="368.0">
+               <image>
+                  <Image url="@../images/5400905.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="specificLackAmountLabel" layoutX="173.0" layoutY="370.0" prefHeight="27.0" prefWidth="57.0" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalLackLable" layoutX="54.0" layoutY="370.0" text="Total lack:" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalAmountLable" layoutX="54.0" layoutY="290.0" text="Total amount:" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="specificTotalAmountLabel" layoutX="202.0" layoutY="289.0" prefHeight="27.0" prefWidth="111.0" textFill="#7c6e48">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

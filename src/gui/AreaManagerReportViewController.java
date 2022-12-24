@@ -83,6 +83,7 @@ public class AreaManagerReportViewController implements Initializable {
 	private static ArrayList<String> arrFromServerRet;
 	private static ArrayList<String> arrReportData;
 	private static ArrayList<String> arrCustomersReportData;
+	private static ArrayList<String> arrInventoryReportData;
 	
 	private ObservableList<String> machineNumberList; // for numberMachineComboBox
 	private ObservableList<String> reportTypeList; // for reportTypeComboBox
@@ -228,9 +229,11 @@ public class AreaManagerReportViewController implements Initializable {
 					ClientHistogramReportViewController.getCustomersReportDetails(arrCustomersReportData);
 					chrvc.start(primaryStage);
 					break;
-				/*case "Inventory":
-					msg.add("getInventoryReportDetails");
-					break;*/
+				case "Inventory":
+					InventoryReportViewController irvc = new InventoryReportViewController();
+					InventoryReportViewController.getInventoryReportDetails(arrInventoryReportData);
+					irvc.start(primaryStage);
+					break;
 				}
 
 			}
@@ -248,9 +251,10 @@ public class AreaManagerReportViewController implements Initializable {
 			if(arrCustomersReportData.get(0).equals("Error"))
 				flag=0;		
 			break;
-		/*case "Inventory":
-			msg.add("getInventoryReportDetails");
-			break;*/
+		case "Inventory":
+			if(arrInventoryReportData.get(0).equals("Error"))
+				flag=0;		
+			break;
 		}
 		if (flag==0) {
 			errorReportDataLable.setText("\t\t\t\tNo such report");
@@ -273,6 +277,10 @@ public class AreaManagerReportViewController implements Initializable {
 
 	public static void getCustomersReportData(ArrayList<String> massageFromServer) {
 		arrCustomersReportData = massageFromServer;
-		System.out.println(arrCustomersReportData);
+	}
+	
+	public static void getInventoryReportData(ArrayList<String> massageFromServer) {
+		arrInventoryReportData = massageFromServer;
+		System.out.println(arrInventoryReportData);
 	}
 }
