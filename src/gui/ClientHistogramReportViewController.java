@@ -2,10 +2,14 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import client.ClientUI;
+import javafx.scene.chart.StackedBarChart;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +20,9 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -30,12 +37,16 @@ public class ClientHistogramReportViewController implements Initializable{
 
     @FXML
     private NumberAxis amountOfCostumers;
-
+    
+    @FXML
+    private StackedBarChart stackedBarChart; //!!!!
+    
     @FXML
     private Button backBtn;
 
     @FXML
-    private BarChart<?, ?> clientBarChart;
+    //private BarChart<Number, String> clientBarChart;
+    private BarChart clientBarChart;
 
     @FXML
     private ImageView ekrutLogoImage;
@@ -67,9 +78,12 @@ public class ClientHistogramReportViewController implements Initializable{
 	private double xoffset;
 	private double yoffset;
 	
+	private static ArrayList<String> arrReportData;
+	//private static ArrayList<Integer> arrReportData;
+	
 	// start window to provide movement window
 	public void start(Stage primaryStage) throws Exception {
-		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/AreaManagerReportView.fxml"));
+		AnchorPane root = FXMLLoader.load(getClass().getResource("/gui/ClientHistogramReportView.fxml"));
 
 		// event handler for when the mouse is pressed AND dragged to move the window
 		root.setOnMousePressed(event1 -> {
@@ -87,16 +101,38 @@ public class ClientHistogramReportViewController implements Initializable{
 		primaryStage.show();
 	}
 	
+	public static void getCustomersReportDetails(ArrayList<String> massageFromServer) {
+		arrReportData = massageFromServer;
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		ArrayList<String> msg1 = new ArrayList<>();
-		msg1.add("getMachineNumber");
-		try {
-			ClientUI.chat.accept(msg1);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		specificMachineNumberLable.setText(arrReportData.get(arrReportData.size()-1));
+		specificAreaLable.setText(arrReportData.get(arrReportData.size()-2));
+		//clientBarChart = new BarChart<>(rangeOfOrders, amountOfCostumers, null);
+		amountOfCostumers.setLabel("Clients");
+		rangeOfOrders.setLabel("Orders");
+		String str = arrReportData.get(0);
+		System.out.println("blabla1" + str);
+		String[] arrOfItems = str.split(",");
+		System.out.println("blabla2" + arrOfItems);
+		System.out.println("blablalba3 " + arrOfItems[0].getClass());
+		System.out.println("blablalba4 " + arrOfItems[1].getClass());
+		//XYChart.Series series = new XYChart.Series();
+		
+		for(int i=0; i<arrOfItems.length-1; i+=2) { 
+			//clientBarChart.add(new PieChart.Data(arrOfItems[i], Double.parseDouble(arrOfItems[i+1])));
+			
+			
+				//series.getData().add(new XYChart.Data<Number, String>(NumberFormat.getInstance().parse(arrOfItems[i+1]), (arrOfItems[i])));
+			XYChart.Series series = new XYChart.Series();
+			XYChart.Data dataCustomers = new XYChart.Data((arrOfItems[i+1]),Integer.parseInt(arrOfItems[i]));
+			series.getData().add(dataCustomers);
+			
+			//clientBarChart.getData().add(new Series(arrOfItems[i], Integer.parseInt(arrOfItems[i+1])));
+			stackedBarChart.getData().addAll(series);
 		}
+		stackedBarChart.setLegendVisible(false);
 	}
 
 	// press back button from area manager page

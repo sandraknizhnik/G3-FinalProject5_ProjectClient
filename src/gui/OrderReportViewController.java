@@ -139,6 +139,8 @@ public class OrderReportViewController implements Initializable{
 		arrReportData = massageFromServer;
 	}
 	
+
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		specificAreaLable.setText(arrReportData.get(arrReportData.size()-1));

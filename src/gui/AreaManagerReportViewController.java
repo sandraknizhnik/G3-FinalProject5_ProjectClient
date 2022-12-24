@@ -79,8 +79,11 @@ public class AreaManagerReportViewController implements Initializable {
 
 	private double xoffset;
 	private double yoffset;
+	
 	private static ArrayList<String> arrFromServerRet;
 	private static ArrayList<String> arrReportData;
+	private static ArrayList<String> arrCustomersReportData;
+	
 	private ObservableList<String> machineNumberList; // for numberMachineComboBox
 	private ObservableList<String> reportTypeList; // for reportTypeComboBox
 	private ObservableList<String> yearList; // for yearComboBox
@@ -208,21 +211,53 @@ public class AreaManagerReportViewController implements Initializable {
 			msg.add(selectedYear);
 			//msg.add(selectedReportType);
 			ClientUI.chat.accept(msg);
-			if(arrReportData.get(0).equals("Error"))
-			{
-				errorReportDataLable.setText("\t\t\t\tNo such report");		
-			}
-			else { //showing report view if the user put current details
+			//System.out.println(arrReportData.get(0));
+			if(checkingErrorMsg())
+			{ //showing report view if the user put current details
 				Stage primaryStage = new Stage();
 				((Node) event.getSource()).getScene().getWindow().hide(); // hiding primary window
 				primaryStage.initStyle(StageStyle.UNDECORATED);
-				OrderReportViewController orvc = new OrderReportViewController();
-				OrderReportViewController.getOrderReportDetails(arrReportData);
-				orvc.start(primaryStage);
+				switch(selectedReportType) {
+				case "Orders":
+					OrderReportViewController orvc = new OrderReportViewController();
+					OrderReportViewController.getOrderReportDetails(arrReportData);
+					orvc.start(primaryStage);
+					break;
+				case "Customers":
+					ClientHistogramReportViewController chrvc = new ClientHistogramReportViewController();
+					ClientHistogramReportViewController.getCustomersReportDetails(arrCustomersReportData);
+					chrvc.start(primaryStage);
+					break;
+				/*case "Inventory":
+					msg.add("getInventoryReportDetails");
+					break;*/
+				}
+
 			}
 		}
 	}
 	
+	private boolean checkingErrorMsg() {
+		int flag=1;
+		switch(selectedReportType) {
+		case "Orders":
+			if(arrReportData.get(0).equals("Error"))
+				flag=0;		
+			break;
+		case "Customers":
+			if(arrCustomersReportData.get(0).equals("Error"))
+				flag=0;		
+			break;
+		/*case "Inventory":
+			msg.add("getInventoryReportDetails");
+			break;*/
+		}
+		if (flag==0) {
+			errorReportDataLable.setText("\t\t\t\tNo such report");
+			return false;
+		}
+		return true;	
+	}
 	
 	boolean checkValidReportData() {
 		if ((selectedMachineNumber==null)||(selectedMonth==null)||(selectedYear==null)||(selectedReportType==null)){
@@ -235,6 +270,9 @@ public class AreaManagerReportViewController implements Initializable {
 	public static void getOrderReportData(ArrayList<String> massageFromServer) {
 		arrReportData = massageFromServer;	
 	}
-	
-	
+
+	public static void getCustomersReportData(ArrayList<String> massageFromServer) {
+		arrCustomersReportData = massageFromServer;
+		System.out.println(arrCustomersReportData);
+	}
 }

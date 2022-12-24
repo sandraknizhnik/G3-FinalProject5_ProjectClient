@@ -68,6 +68,10 @@ public class ChatClient extends AbstractClient{
 		  case "getOrderReportDetails":
 			  AreaManagerReportViewController.getOrderReportData(massageFromServer);
 			  break;
+		  case "getCustomersReportDetails":
+			  AreaManagerReportViewController.getCustomersReportData(massageFromServer);
+			  break;
+		
 		
 		  }
 		  

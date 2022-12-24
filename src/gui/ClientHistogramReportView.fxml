@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -72,14 +72,14 @@
                   </Label>
                </children>
             </AnchorPane>
-            <BarChart fx:id="clientBarChart" layoutX="372.0" layoutY="63.0" prefHeight="415.0" prefWidth="487.0">
+            <StackedBarChart fx:id="stackedBarChart" layoutX="331.0" layoutY="70.0" prefHeight="401.0" prefWidth="520.0">
               <xAxis>
                 <CategoryAxis fx:id="rangeOfOrders" side="BOTTOM" />
               </xAxis>
               <yAxis>
                 <NumberAxis fx:id="amountOfCostumers" side="LEFT" />
               </yAxis>
-            </BarChart>
+            </StackedBarChart>
          </children>
       </AnchorPane>
    </children>
